@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { GradientMesh } from "@/components/effects/GradientMesh";
+import { NeuralNetworkBackground } from "@/components/effects/NeuralNetworkBackground";
 import { site } from "@/lib/config";
 import { useTypingCycle } from "@/hooks/useTypingCycle";
 
@@ -22,7 +23,8 @@ export function Hero() {
       className="relative overflow-hidden border-b border-white/[0.06] pb-24 pt-6 sm:pb-32 sm:pt-4"
     >
       <GradientMesh />
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
+      <NeuralNetworkBackground />
+      <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}

@@ -6,7 +6,7 @@ export function GradientMesh() {
   return (
     <div
       aria-hidden
-      className="pointer-events-none absolute inset-0 overflow-hidden"
+      className="pointer-events-none absolute inset-0 z-[1] overflow-hidden"
     >
       <motion.div
         className="absolute -left-1/4 top-[-10%] h-[55vh] w-[55vh] rounded-full bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.35),transparent_65%)] blur-3xl"
