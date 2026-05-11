@@ -58,18 +58,9 @@ export function Hero() {
               <span className="ml-0.5 inline-block h-[1.1em] w-px translate-y-0.5 bg-violet-400/80 align-middle animate-pulse" />
             </span>
           </span>
-          <motion.span
-            className="mt-3 block text-zinc-400"
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.5,
-              delay: 0.45,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-          >
+          <span className="hero-tagline-in mt-3 block text-zinc-400">
             Turning research into products.
-          </motion.span>
+          </span>
         </motion.p>
 
         <motion.div

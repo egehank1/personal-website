@@ -16,7 +16,12 @@ const space = Space_Grotesk({
   display: "swap",
 });
 
-const siteUrl = new URL(site.url);
+let siteUrl: URL;
+try {
+  siteUrl = new URL(site.url);
+} catch {
+  siteUrl = new URL("http://localhost:3000");
+}
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
@@ -84,7 +89,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${space.variable} min-h-screen bg-background text-foreground antialiased`}
+        className={`${inter.variable} ${space.variable} min-h-screen bg-[#030306] bg-background text-foreground antialiased`}
       >
         <div className="noise-overlay" aria-hidden />
         <script
