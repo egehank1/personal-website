@@ -21,7 +21,7 @@ export default function Icon() {
           fontFamily: "ui-sans-serif, system-ui",
         }}
       >
-        AR
+        EK
       </div>
     ),
     { ...size },

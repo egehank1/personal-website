@@ -1,5 +1,5 @@
 export const site = {
-  name: "Alex Rivera",
+  name: "Egehan Kilic",
   title: "AI Engineer & Product Builder",
   description:
     "Portfolio of an AI-forward engineer shipping production systems, agents, and interfaces with clarity and craft.",

@@ -52,7 +52,7 @@ export function Navbar() {
           >
             <span className="relative flex h-8 w-8 items-center justify-center overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-violet-500/25 via-blue-500/10 to-transparent text-[11px] tracking-[0.18em]">
               <span className="absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-[radial-gradient(circle_at_30%_0%,rgba(255,255,255,0.35),transparent_55%)]" />
-              AR
+              EK
             </span>
             <span className="hidden sm:inline">{site.name}</span>
           </Link>
