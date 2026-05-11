@@ -43,10 +43,10 @@ export function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-8 max-w-4xl font-display text-[clamp(2.6rem,6vw,4.25rem)] font-semibold leading-[1.02] tracking-tight text-white"
+          className="mt-8 max-w-4xl pb-1 font-display text-[clamp(2.6rem,6vw,4.25rem)] font-semibold leading-[1.1] tracking-tight text-white"
         >
           Building calm software
-          <span className="block bg-gradient-to-r from-white via-violet-100 to-blue-200 bg-clip-text pb-2 text-transparent">
+          <span className="block bg-gradient-to-r from-white via-violet-100 to-blue-200 bg-clip-text pb-3 text-transparent">
             at the edge of intelligence.
           </span>
         </motion.h1>
@@ -55,7 +55,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg"
+          className="mt-8 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg"
         >
           <span className="text-zinc-300">
             AI engineer building intelligent systems — from{" "}
