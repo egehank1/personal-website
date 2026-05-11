@@ -39,7 +39,7 @@ export function Hero() {
           className="mt-8 max-w-4xl font-display text-[clamp(2.6rem,6vw,4.25rem)] font-semibold leading-[1.02] tracking-tight text-white"
         >
           Building calm software
-          <span className="block bg-gradient-to-r from-white via-violet-100 to-blue-200 bg-clip-text text-transparent">
+          <span className="block bg-gradient-to-r from-white via-violet-100 to-blue-200 bg-clip-text pb-2 text-transparent">
             at the edge of intelligence.
           </span>
         </motion.h1>
