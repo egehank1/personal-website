@@ -8,9 +8,12 @@ type Ripple = { cx: number; cy: number; r: number; a: number };
 
 const MAX_LINK_DIST = 118;
 const SKIP_MAX_DIST = MAX_LINK_DIST * 2.05;
-const INFLUENCE_R = 260;
-const MAX_SPEED = 0.42;
-const FORCE = 0.022;
+/** Inner bubble: strong pull toward cursor. */
+const CORE_R = 122;
+/** Outer halo: gentle drift begins here (ripples / glow feel aligned). */
+const HALO_R = 198;
+const MAX_SPEED = 0.48;
+const FORCE = 0.052;
 const DAMP = 0.965;
 const MAX_PARTICLES = 96;
 const MIN_PARTICLES = 34;
@@ -133,16 +136,39 @@ export function NeuralNetworkBackground() {
         if (ptrActive) {
           const dx = ptrX - p.x;
           const dy = ptrY - p.y;
-          const d = Math.hypot(dx, dy) + 1e-4;
-          const falloff = Math.max(0, 1 - d / INFLUENCE_R) ** 2;
-          const layerScale = p.layer === 0 ? 0.68 : 1;
-          const fx = (dx / d) * f0 * falloff * layerScale;
-          const fy = (dy / d) * f0 * falloff * layerScale;
-          const tx = -dy / d;
-          const ty = dx / d;
-          const swirl = f0 * 0.35 * falloff * layerScale;
-          p.vx += fx + tx * swirl;
-          p.vy += fy + ty * swirl;
+          const d = Math.hypot(dx, dy);
+          if (d >= HALO_R) {
+            p.vx = 0;
+            p.vy = 0;
+          } else if (d < CORE_R) {
+            const t = 1 - d / CORE_R;
+            const falloffPull = t * t * t;
+            const falloffSwirl = t * t * t * t;
+            const layerScale = p.layer === 0 ? 0.68 : 1;
+            const dInv = 1 / Math.max(d, 7);
+            const pull = f0 * falloffPull * layerScale;
+            const fx = dx * dInv * pull;
+            const fy = dy * dInv * pull;
+            const tx = -dy * dInv;
+            const ty = dx * dInv;
+            const swirl = f0 * 0.1 * falloffSwirl * layerScale;
+            p.vx += fx + tx * swirl;
+            p.vy += fy + ty * swirl;
+          } else {
+            const span = HALO_R - CORE_R;
+            const u = span > 1e-6 ? 1 - (d - CORE_R) / span : 0;
+            const uSoft = u * u * u;
+            const layerScale = p.layer === 0 ? 0.68 : 1;
+            const dInv = 1 / Math.max(d, 7);
+            const gentle = f0 * 0.12 * uSoft * layerScale;
+            const fx = dx * dInv * gentle;
+            const fy = dy * dInv * gentle;
+            const tx = -dy * dInv;
+            const ty = dx * dInv;
+            const swirl = f0 * 0.035 * u * u * u * u * layerScale;
+            p.vx += fx + tx * swirl;
+            p.vy += fy + ty * swirl;
+          }
         }
 
         p.vx *= DAMP;
@@ -168,21 +194,12 @@ export function NeuralNetworkBackground() {
       }
     };
 
-    const parallax = () => {
-      if (!ptrActive) return { ox: 0, oy: 0 };
-      return {
-        ox: (ptrX - width * 0.5) * 0.026,
-        oy: (ptrY - height * 0.5) * 0.02,
-      };
-    };
-
     const draw = () => {
       c.clearRect(0, 0, width, height);
 
       const n = particles.length;
       const cx = ptrActive ? ptrX : -9999;
       const cy = ptrActive ? ptrY : -9999;
-      const { ox, oy } = parallax();
 
       const inAttention = new Set<number>();
       let attentionOrder: number[] = [];
@@ -232,10 +249,10 @@ export function NeuralNetworkBackground() {
           const pb = particles[j];
           const la = pa.layer;
           const lb = pb.layer;
-          const ax = la === 0 ? pa.x + ox : pa.x;
-          const ay = la === 0 ? pa.y + oy : pa.y;
-          const bx = lb === 0 ? pb.x + ox : pb.x;
-          const by = lb === 0 ? pb.y + oy : pb.y;
+          const ax = pa.x;
+          const ay = pa.y;
+          const bx = pb.x;
+          const by = pb.y;
           const dx = pa.x - pb.x;
           const dy = pa.y - pb.y;
           const dist = Math.hypot(dx, dy);
@@ -245,7 +262,12 @@ export function NeuralNetworkBackground() {
           let boost = 1;
           if (ptrActive) {
             const dSeg = distPointSegment(cx, cy, ax, ay, bx, by);
-            if (dSeg < 92) boost += (1 - dSeg / 92) * 0.85;
+            const da = Math.hypot(pa.x - cx, pa.y - cy);
+            const db = Math.hypot(pb.x - cx, pb.y - cy);
+            const segR = 82;
+            if (dSeg < segR && Math.min(da, db) < HALO_R + 12) {
+              boost += (1 - dSeg / segR) * 0.85;
+            }
           }
 
           const cross = la !== lb;
@@ -286,13 +308,15 @@ export function NeuralNetworkBackground() {
 
       for (let pi = 0; pi < n; pi++) {
         const p = particles[pi];
-        const px = p.layer === 0 ? p.x + ox : p.x;
-        const py = p.layer === 0 ? p.y + oy : p.y;
+        const px = p.x;
+        const py = p.y;
         let a = p.layer === 0 ? 0.2 : 0.3;
         const r = p.layer === 0 ? 1.28 : 1.62;
         if (ptrActive) {
           const d = Math.hypot(p.x - ptrX, p.y - ptrY);
-          a += Math.max(0, 1 - d / 150) * (p.layer === 0 ? 0.22 : 0.36);
+          const halo = Math.max(0, 1 - d / HALO_R);
+          const coreBoost = d < CORE_R ? Math.max(0, 1 - d / CORE_R) : 0;
+          a += halo * (p.layer === 0 ? 0.14 : 0.22) + coreBoost * (p.layer === 0 ? 0.12 : 0.18);
         }
         if (inAttention.has(pi)) a += 0.12;
         c.fillStyle = `rgba(210, 232, 255, ${Math.min(0.95, a)})`;
@@ -306,8 +330,8 @@ export function NeuralNetworkBackground() {
         const idx = attentionOrder[k];
         if (!ptrActive) continue;
         const p = particles[idx];
-        const px = p.layer === 0 ? p.x + ox : p.x;
-        const py = p.layer === 0 ? p.y + oy : p.y;
+        const px = p.x;
+        const py = p.y;
         c.strokeStyle = `rgba(125, 240, 255, ${0.12 + 0.08 * Math.sin(time * 0.04 + k)})`;
         c.lineWidth = 0.5;
         c.beginPath();
@@ -316,7 +340,8 @@ export function NeuralNetworkBackground() {
       }
 
       if (ptrActive) {
-        const g = c.createRadialGradient(ptrX, ptrY, 0, ptrX, ptrY, 150);
+        const bubbleR = HALO_R * 0.94;
+        const g = c.createRadialGradient(ptrX, ptrY, 0, ptrX, ptrY, bubbleR);
         g.addColorStop(0, "rgba(56, 189, 248, 0.13)");
         g.addColorStop(0.42, "rgba(139, 92, 246, 0.055)");
         g.addColorStop(1, "rgba(0, 0, 0, 0)");

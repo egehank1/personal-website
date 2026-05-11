@@ -14,6 +14,10 @@ const HERO_PHRASES: string[] = [
   "reliable agents in production",
 ];
 
+/** Same chrome as “Start a conversation” (default + hover background). */
+const secondaryGhostButtonClass =
+  "inline-flex items-center justify-center rounded-full border border-white/15 bg-white/[0.03] px-6 py-3 text-sm font-medium text-zinc-100 backdrop-blur-xl transition hover:border-violet-400/35 hover:bg-white/[0.06]";
+
 export function Hero() {
   const typed = useTypingCycle(HERO_PHRASES, 42, 2600);
 
@@ -78,10 +82,7 @@ export function Hero() {
             <span className="absolute inset-0 bg-gradient-to-r from-violet-200/40 via-transparent to-blue-200/30 opacity-0 transition group-hover:opacity-100" />
             <span className="relative">View projects</span>
           </Link>
-          <Link
-            href="/#contact"
-            className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/[0.03] px-6 py-3 text-sm font-medium text-zinc-100 backdrop-blur-xl transition hover:border-violet-400/35 hover:bg-white/[0.06]"
-          >
+          <Link href="/#contact" className={secondaryGhostButtonClass}>
             Start a conversation
           </Link>
         </motion.div>
@@ -90,7 +91,7 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.28 }}
-          className="mt-12 flex flex-wrap gap-3 text-sm text-zinc-400"
+          className="mt-12 flex flex-wrap gap-4"
         >
           {[
             { label: "GitHub", href: site.social.github },
@@ -102,7 +103,7 @@ export function Hero() {
               href={s.href}
               target="_blank"
               rel="noreferrer"
-              className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2 transition hover:border-violet-400/40 hover:text-white"
+              className={secondaryGhostButtonClass}
             >
               {s.label}
             </a>
