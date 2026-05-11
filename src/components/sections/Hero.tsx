@@ -7,13 +7,14 @@ import { site } from "@/lib/config";
 import { useTypingCycle } from "@/hooks/useTypingCycle";
 
 const HERO_PHRASES: string[] = [
-  "AI systems in production",
-  "Agents with guardrails",
-  "Interfaces that feel inevitable",
+  "LLMs",
+  "computer vision",
+  "production ML pipelines",
+  "reliable agents in production",
 ];
 
 export function Hero() {
-  const typed = useTypingCycle(HERO_PHRASES, 48, 2400);
+  const typed = useTypingCycle(HERO_PHRASES, 42, 2600);
 
   return (
     <section
@@ -50,12 +51,25 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
           className="mt-6 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg"
         >
-          I design and ship{" "}
-          <span className="font-medium text-zinc-100">
-            <span className="tabular-nums">{typed}</span>
-            <span className="ml-0.5 inline-block h-[1.1em] w-px translate-y-0.5 bg-violet-400/80 align-middle animate-pulse" />
+          <span className="text-zinc-300">
+            AI engineer building intelligent systems — from{" "}
+            <span className="font-medium text-zinc-100">
+              <span className="tabular-nums">{typed}</span>
+              <span className="ml-0.5 inline-block h-[1.1em] w-px translate-y-0.5 bg-violet-400/80 align-middle animate-pulse" />
+            </span>
           </span>
-          —with observability, taste, and product judgment baked in from day zero.
+          <motion.span
+            className="mt-3 block text-zinc-400"
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.45,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+          >
+            Turning research into products.
+          </motion.span>
         </motion.p>
 
         <motion.div
