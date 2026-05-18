@@ -96,7 +96,7 @@ export function Hero() {
           {[
             { label: "GitHub", href: site.social.github },
             { label: "LinkedIn", href: site.social.linkedin },
-            { label: "X", href: site.social.x },
+            { label: "Medium", href: site.social.medium },
           ].map((s) => (
             <a
               key={s.label}

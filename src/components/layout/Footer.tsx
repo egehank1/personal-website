@@ -6,6 +6,7 @@ const footerLinks = [
   { href: "/blog", label: "Blog" },
   { href: site.social.github, label: "GitHub", external: true },
   { href: site.social.linkedin, label: "LinkedIn", external: true },
+  { href: site.social.medium, label: "Medium", external: true },
 ];
 
 export function Footer() {

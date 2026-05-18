@@ -21,8 +21,8 @@ export const site = {
   url: resolveSiteUrl(),
   email: "hello@example.com",
   social: {
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
-    x: "https://x.com",
+    github: "https://github.com/egehank1",
+    linkedin: "https://www.linkedin.com/in/egehankilic/",
+    medium: "https://medium.com/@egehankilic",
   },
 } as const;
