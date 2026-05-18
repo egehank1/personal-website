@@ -51,7 +51,7 @@ export const projects: Project[] = [
     ],
     github: "https://github.com/egehank1/deepscholar",
     medium:
-      "https://medium.com/@egehankilic/i-built-a-research-assistant-that-actually-cites-its-sources-heres-every-decision-i-made-ff97ebca9ef9",
+      "https://medium.com/@egehankilic/the-hardest-part-of-ai-research-tools-isnt-generation-it-s-trust-14cf5f11e37e",
     year: "2026",
     caseStudy: {
       subtitle:
