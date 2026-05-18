@@ -26,11 +26,11 @@ export const projects: Project[] = [
     title: "DeepScholar",
     tagline: "RAG-powered research copilot with grounded citations.",
     description:
-      "Ingests academic PDFs into a pgvector knowledge base and answers questions with semantically retrieved, source-cited context—eliminating hallucination at the retrieval layer.",
+      "Ingests academic PDFs into a pgvector knowledge base and answers questions from semantically retrieved, source-cited context so the model stays grounded at retrieval time.",
     highlights: [
       "Sentence-aware chunking with configurable overlap preserves context at boundaries",
       "pgvector cosine similarity + IVFFlat indexing for sub-100 ms semantic retrieval",
-      "RAG prompt enforces grounded responses—model cites or declines, never fabricates",
+      "RAG prompt enforces grounded responses: cite a passage or say you cannot answer",
       "Structured JSON citation output with source, chunk ID, and passage fields",
     ],
     tech: [
@@ -56,7 +56,7 @@ export const projects: Project[] = [
       sections: [
         {
           heading: "Overview",
-          body: "DeepScholar is a research assistant that ingests academic PDFs and exposes them as a semantic knowledge base. Users submit questions and receive grounded answers backed by exact source passages—with inline, expandable citations. The architecture decouples ingestion from retrieval, keeping each stage independently testable and scalable.",
+          body: "DeepScholar is a research assistant that ingests academic PDFs and exposes them as a semantic knowledge base. Users ask questions and get answers tied to real passages, with inline citations they can expand. Ingestion and retrieval are separate services, so each stage is easy to test and scale on its own.",
         },
         {
           heading: "Problem",
@@ -69,9 +69,9 @@ export const projects: Project[] = [
         },
         {
           heading: "Architecture",
-          body: "FastAPI handles PDF ingestion through a multi-stage pipeline: PyMuPDF extracts raw text, a sentence-aware chunker splits content with configurable overlap, and OpenAI's embedding API generates vector representations stored in PostgreSQL with pgvector on Supabase. At query time, the RAG pipeline performs cosine similarity search over indexed embeddings and constructs a prompt that instructs the model to answer strictly from retrieved context—emitting structured JSON citations for every claim.",
+          body: "FastAPI runs a multi-stage ingest: PyMuPDF pulls text, a sentence-aware chunker splits it with configurable overlap, and OpenAI embeddings land in PostgreSQL with pgvector on Supabase. At query time, cosine search over those vectors builds a prompt that only allows answers from retrieved chunks, with structured JSON citations on every claim.",
           items: [
-            "Structured extraction pipeline: post-parse LLM-assisted extraction step produces a validated JSON schema per document—title, authors, abstract, methodology, datasets, metrics, limitations—before chunking and embedding. Schema is enforced at the service boundary; malformed extractions trigger a retry with a narrowed context window. Extraction logic is decoupled from the chunking and embedding pipeline as an independent service.",
+            "Structured extraction pipeline: after parse, an LLM step fills a validated JSON schema per paper (title, authors, abstract, methodology, datasets, metrics, limitations) before chunking and embedding. Bad payloads fail at the service boundary and retry with a smaller context window. Extraction runs as its own service, separate from chunking and embedding.",
             "Global state layer: React Context backed by localStorage rehydration. FileResult[] persists across route changes and hard refreshes. addDocuments deduplicates by filename; removeDocument and clearDocuments provide full store control.",
           ],
         },
@@ -80,7 +80,7 @@ export const projects: Project[] = [
           items: [
             "Magic-byte validation rejects non-PDF payloads before any processing begins",
             "Sentence-aware chunking with configurable overlap preserves cross-boundary context",
-            "RAG prompt contract: model must cite retrieved passages or explicitly decline—no fabrication",
+            "RAG prompt contract: model must cite retrieved passages or explicitly decline. No fabrication.",
             "Citations emitted as structured JSON: source filename, chunk_id, and verbatim passage",
             "pgvector cosine similarity search with IVFFlat indexing for sub-100 ms P99 retrieval",
             "Supabase schema designed for multi-document workspaces and per-user isolation",
@@ -93,20 +93,20 @@ export const projects: Project[] = [
           heading: "Frontend",
           items: [
             "Drag-and-drop PDF upload with live ingestion progress feedback",
-            "Per-file upload progress via XHR onprogress events tracked per filename key in a reducer map—not a single scalar average",
-            "Persistent Indexed Library table driven by global context state, not last-batch response—survives remounts and navigation",
-            "Parsing status badges derived from FileResult status enum: pending, extracting, chunking, indexed, failed—failed state surfaces error_message inline",
+            "Per-file upload progress via XHR onprogress, keyed by filename in a reducer map (not one blended percentage)",
+            "Indexed Library table reads from global context, not the last upload response, so it survives remounts and route changes",
+            "Status badges follow the FileResult enum: pending, extracting, chunking, indexed, failed. Failures show error_message inline",
             "chunks_stored and pages_extracted rendered as secondary metadata per document card",
             "Chat interface streams answers with inline expandable citation cards",
             "Each citation surfaces the source passage and document origin",
             "Research Insights Panel: expandable cards per extraction field (methodology, datasets, metrics, limitations), mounted inline in upload results and on a dedicated document detail page. Collapsed by default; expand state tracked per card per document. Missing fields render a degraded state cell, not an empty render",
-            "Paper comparison workspace at /compare: multi-select over the global document store, side-by-side column layout per document, rows fixed to methodology, datasets, metrics, limitations. Data pulled from stored extraction payload—no LLM call at render time. Zero new backend endpoints",
+            "Paper comparison at /compare: pick papers from the global store, columns per doc, rows for methodology, datasets, metrics, and limitations. Renders from stored extraction JSON only; no LLM on page load and no new API routes",
             "Single-workspace UI optimized for focused, distraction-free research sessions",
           ],
         },
         {
           heading: "Roadmap",
-          body: "Six independently shippable upgrades scoped for the next phase—none require ingestion schema changes:",
+          body: "Next phase work is split into six shippable slices. None of them need changes to the ingest schema:",
           items: [
             "Hybrid search: BM25 keyword index running in parallel with dense vector retrieval, merged via reciprocal rank fusion",
             "Reranking model re-scores the merged candidate set before context window construction",
