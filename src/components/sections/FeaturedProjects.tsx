@@ -43,6 +43,16 @@ export function FeaturedProjects() {
                         GitHub
                       </a>
                     ) : null}
+                    {project.medium ? (
+                      <a
+                        href={project.medium}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[11px] text-zinc-200 transition hover:border-violet-400/40 hover:text-white"
+                      >
+                        Medium
+                      </a>
+                    ) : null}
                     {project.live ? (
                       <a
                         href={project.live}

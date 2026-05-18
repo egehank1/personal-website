@@ -12,6 +12,7 @@ export type Project = {
   highlights: string[];
   tech: string[];
   github?: string;
+  medium?: string;
   live?: string;
   year: string;
   caseStudy?: {
@@ -49,6 +50,8 @@ export const projects: Project[] = [
       "PyMuPDF",
     ],
     github: "https://github.com/egehank1/deepscholar",
+    medium:
+      "https://medium.com/@egehankilic/i-built-a-research-assistant-that-actually-cites-its-sources-heres-every-decision-i-made-ff97ebca9ef9",
     year: "2026",
     caseStudy: {
       subtitle:
