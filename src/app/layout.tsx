@@ -78,7 +78,7 @@ const jsonLd = {
   name: site.name,
   url: site.url,
   jobTitle: site.title,
-  sameAs: [site.social.github, site.social.linkedin, site.social.x],
+  sameAs: [site.social.github, site.social.linkedin, site.social.medium],
 };
 
 export default function RootLayout({

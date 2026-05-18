@@ -135,9 +135,9 @@ export function Contact() {
                   </a>
                 </div>
                 <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-black/35 px-4 py-3">
-                  <span>X</span>
+                  <span>Medium</span>
                   <a
-                    href={site.social.x}
+                    href={site.social.medium}
                     target="_blank"
                     rel="noreferrer"
                     className="text-zinc-100 hover:text-white"
