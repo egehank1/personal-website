@@ -4,16 +4,16 @@ import { site } from "@/lib/config";
 
 const pillars = [
   {
-    title: "Systems thinking",
-    body: "I map failure modes early: latency, cost, hallucination, and human workflow—then design architecture that degrades gracefully.",
+    title: "Trust by design",
+    body: "I'd rather ship AI that admits what it doesn't know. In DeepScholar, every answer cites a real passage or says it can't answer—no fabricated sources, no confident guesses.",
   },
   {
-    title: "Product instinct",
-    body: "Great AI feels boring in the best way: predictable when it must be, surprising only when invited. I obsess over that balance.",
+    title: "Range across the stack",
+    body: "Next.js and FastAPI, Python ML pipelines, Java systems, ServiceNow scripting, even a trading bot. I follow the problem wherever it leads instead of staying in one lane.",
   },
   {
-    title: "Craft in the details",
-    body: "Typography, motion, and micro-interactions are not decoration—they are trust signals. I ship interfaces that respect attention.",
+    title: "The boring parts matter",
+    body: "Validation at every boundary, reproducible pipelines, and clean data the rest of a team can rely on. Most of what makes software trustworthy is unglamorous—I lean into it.",
   },
 ];
 
@@ -24,24 +24,27 @@ export function About() {
         <SectionHeading
           eyebrow="About"
           title={`Hi, I’m ${site.name.split(" ")[0]}.`}
-          subtitle="I work at the intersection of applied AI, full-stack engineering, and product design—shipping software that teams actually want to live in."
+          subtitle="I'm a software developer who builds enterprise platforms by day and AI products on the side—from ServiceNow workflows and a Digital Product Passport system to RAG copilots and ML pipelines."
         />
 
         <div className="grid gap-6 lg:grid-cols-[1.1fr_minmax(0,0.9fr)] lg:gap-10">
           <ScrollReveal className="rounded-3xl border border-white/[0.08] bg-gradient-to-br from-white/[0.06] via-white/[0.02] to-transparent p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_40px_120px_-60px_rgba(99,102,241,0.55)] backdrop-blur-xl sm:p-8">
             <p className="text-sm leading-relaxed text-zinc-300 sm:text-[15px]">
-              Most recently I&apos;ve been building agentic workflows, evaluation
-              infrastructure, and customer-facing surfaces where model behavior is
-              observable and tunable. I care deeply about the boring parts: logging,
-              rollback, permissions, and clear operator UX when things go sideways.
+              Right now I&apos;m a Software Developer at snacc-it, building Project
+              ETHICA—a Digital Product Passport platform that gives companies ESG
+              transparency and a full audit trail—while shipping ServiceNow workflows
+              that cut manual effort out of enterprise processes. On the side I build AI
+              and ML projects like DeepScholar, a RAG research copilot that keeps its
+              answers grounded in real, citable sources.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
-              Outside of execution work, I write about shipping with uncertainty,
-              design for dense information, and how to keep ML systems honest in
-              production.
+              Before this I worked as a quantitative developer building trading bots,
+              tutored 200+ students in computer science at FH Aachen, and founded an
+              e-commerce brand from scratch. I write about what I learn on Medium—usually
+              about building AI products people can actually trust.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              {["North America", "Remote-first", "Select travel"].map((chip) => (
+              {["Aachen, Germany", "Remote-friendly", "Open to roles"].map((chip) => (
                 <div
                   key={chip}
                   className="rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-xs font-medium uppercase tracking-[0.18em] text-zinc-400"

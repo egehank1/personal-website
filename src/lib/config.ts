@@ -15,7 +15,7 @@ function resolveSiteUrl(): string {
 export const site = {
   name: "Egehan Kilic",
   initials: "EK",
-  title: "AI Engineer & Product Builder",
+  title: "Software Developer",
   description:
     "Portfolio of an AI-forward engineer shipping production systems, agents, and interfaces with clarity and craft.",
   url: resolveSiteUrl(),

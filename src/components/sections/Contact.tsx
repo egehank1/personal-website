@@ -12,12 +12,17 @@ export function Contact() {
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
+    const data = new FormData(form);
     setStatus("sending");
     try {
-      const res = await fetch("https://formspree.io/f/xpqelwag", {
+      const res = await fetch("/api/contact", {
         method: "POST",
-        body: new FormData(form),
-        headers: { Accept: "application/json" },
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: String(data.get("name") ?? "").trim(),
+          email: String(data.get("email") ?? "").trim(),
+          message: String(data.get("message") ?? "").trim(),
+        }),
       });
       if (res.ok) {
         setStatus("sent");
