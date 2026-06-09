@@ -19,7 +19,7 @@ export const site = {
   description:
     "Portfolio of an AI-forward engineer shipping production systems, agents, and interfaces with clarity and craft.",
   url: resolveSiteUrl(),
-  email: "hello@example.com",
+  email: "egehanantalya@gmail.com",
   social: {
     github: "https://github.com/egehank1",
     linkedin: "https://www.linkedin.com/in/egehankilic/",

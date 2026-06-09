@@ -46,7 +46,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/[0.04] py-4 text-center text-xs text-zinc-500">
-        © {new Date().getFullYear()} {site.name}. Built with Next.js.
+        © {new Date().getFullYear()} {site.name}.
       </div>
     </footer>
   );

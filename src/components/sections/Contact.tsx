@@ -20,7 +20,7 @@ export function Contact() {
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\n\n${message}`,
     );
-    window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
+    window.open(`mailto:${site.email}?subject=${subject}&body=${body}`, "_self");
     setStatus("sent");
     form.reset();
     window.setTimeout(() => setStatus("idle"), 4000);
