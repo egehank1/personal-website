@@ -26,7 +26,7 @@ export default function BlogPage() {
         </h1>
         <p className="mt-4 text-sm leading-relaxed text-zinc-400 sm:text-base">
           Experiences, bottlenecks, and retrospectives from shipping real products —
-          what hit, what broke, and what I'd do differently.
+          what hit, what broke, and what I&apos;d do differently.
         </p>
       </header>
 
