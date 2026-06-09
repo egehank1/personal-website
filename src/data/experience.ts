@@ -14,8 +14,8 @@ export const experience: ExperienceItem[] = [
     company: "snacc-it",
     period: "Mar 2025 — Present",
     summary:
-      "ServiceNow ITSM development focused on incident management automation. Built dynamic UI components, catalog items, and workflow automation scripts. Developed client-side and server-side logic for process optimization and configured Service Portals.",
-    stack: ["ServiceNow", "ITSM", "JavaScript", "Scripting"],
+      "Currently working on Project ETHICA, a Digital Product Passport platform that gives companies ESG transparency, compliance, and a full audit trail across their products. Alongside that I build on ServiceNow day to day, covering incident management, travel reimbursement workflows, an enterprise illness reporting process, and enterprise website development. Most of the work is client and server side scripting, catalog items, and Service Portal configuration to cut down manual effort in internal processes.",
+    stack: ["ServiceNow", "Digital Product Passport", "ESG", "ITSM", "JavaScript"],
   },
   {
     id: "2",
@@ -23,8 +23,8 @@ export const experience: ExperienceItem[] = [
     company: "Aachen Investment Club e.V.",
     period: "Mar 2025 — Aug 2025",
     summary:
-      "Developed quantitative models for investment strategies and built data analysis and automation tools for financial decision-making. Worked in a multidisciplinary finance and software team.",
-    stack: ["Python", "Quantitative Finance", "Data Analysis", "Automation"],
+      "Built quantitative models for the club's investment strategies and developed an automated trading bot that handled signal generation and order logic. Spent most of my time on data analysis and keeping the pipelines the rest of the team relied on for decisions clean and reliable. Worked closely with people from both finance and software backgrounds.",
+    stack: ["Python", "Trading Bot", "Quantitative Finance", "Data Analysis"],
   },
   {
     id: "3",
@@ -32,7 +32,7 @@ export const experience: ExperienceItem[] = [
     company: "FH Aachen University of Applied Sciences",
     period: "Aug 2024 — Feb 2025",
     summary:
-      "Tutored students in Fundamentals of Computer Science and Advanced Programming. Supported algorithmic thinking, coding skills, and problem-solving.",
+      "Tutored over 200 students across Fundamentals of Computer Science and Advanced Programming, working through 10+ assignments with each of them. A lot of the job was explaining algorithms, walking through control flow line by line, and sitting with students to debug their code until it finally clicked.",
     stack: ["Algorithms", "Programming", "Teaching"],
   },
   {
@@ -41,8 +41,8 @@ export const experience: ExperienceItem[] = [
     company: "AcIAS e. V.",
     period: "Apr 2024 — Feb 2025",
     summary:
-      "Worked on digital marketing and business process optimization.",
-    stack: ["Digital Marketing", "Business Processes"],
+      "Ran the association's Instagram account, which reaches 500+ students a year from all over the world. Put out 200+ stories, 35+ posts, and 5+ reels while keeping the messaging consistent, and handled the wider digital marketing along with a few process improvements on the side.",
+    stack: ["Instagram", "Digital Marketing", "Content Strategy"],
   },
   {
     id: "5",

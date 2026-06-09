@@ -27,7 +27,7 @@ export const projects: Project[] = [
     title: "DeepScholar",
     tagline: "RAG-powered research copilot with grounded citations.",
     description:
-      "Ingests academic PDFs into a pgvector knowledge base and answers questions from semantically retrieved, source-cited context so the model stays grounded at retrieval time.",
+      "Ingests academic PDFs into a pgvector knowledge base and answers questions using semantically retrieved, source-cited passages. Every answer stays grounded at retrieval time, so the model either cites a real passage or admits it cannot answer instead of fabricating references.",
     highlights: [
       "Sentence-aware chunking with configurable overlap preserves context at boundaries",
       "pgvector cosine similarity + IVFFlat indexing for sub-100 ms semantic retrieval",
