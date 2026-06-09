@@ -12,7 +12,7 @@ export function TechStackGrid() {
         <SectionHeading
           eyebrow="Toolkit"
           title="Tech stack"
-          subtitle="A pragmatic mix of languages, ML tooling, and infra primitives—chosen for leverage, not novelty."
+          subtitle="A pragmatic mix of languages, ML tooling, and infra primitives, chosen for leverage, not novelty."
         />
 
         <div className="grid gap-5 md:grid-cols-2">

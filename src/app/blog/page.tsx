@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: "Blog",
   description: `Essays and notes by ${site.name} on AI systems, design, and shipping.`,
   openGraph: {
-    title: `Blog — ${site.name}`,
+    title: `Blog | ${site.name}`,
     description: `Essays and notes by ${site.name} on AI systems, design, and shipping.`,
     url: `${site.url}/blog`,
   },

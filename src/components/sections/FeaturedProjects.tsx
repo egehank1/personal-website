@@ -13,7 +13,7 @@ export function FeaturedProjects() {
         <SectionHeading
           eyebrow="Work"
           title="Featured projects"
-          subtitle="Selected builds where models, infra, and interface design had to move together—no loose seams."
+          subtitle="Selected builds where models, infra, and interface design had to move together, with no loose seams."
         />
 
         <div className="grid gap-6 lg:grid-cols-3">

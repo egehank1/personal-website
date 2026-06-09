@@ -141,7 +141,7 @@ export default async function ProjectPage({ params }: Props) {
             </>
           )}
 
-          {/* Tech stack — always shown */}
+          {/* Tech stack, always shown */}
           <div className="mt-10 border-t border-white/[0.06] pt-8">
             <h2 className="text-xs font-medium uppercase tracking-[0.26em] text-zinc-500">
               Tech stack

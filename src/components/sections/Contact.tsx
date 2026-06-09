@@ -89,7 +89,7 @@ export function Contact() {
                   required
                   rows={5}
                   className="rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-sm font-normal normal-case tracking-normal text-zinc-100 outline-none transition placeholder:text-zinc-600 focus:border-violet-400/50 focus:bg-black/55"
-                  placeholder="Context, timeline, links—whatever helps me understand the shape of the work."
+                  placeholder="Context, timeline, links, whatever helps me understand the shape of the work."
                 />
               </label>
 
@@ -103,7 +103,7 @@ export function Contact() {
                 </button>
                 {status === "sent" && (
                   <span className="text-xs text-emerald-300">
-                    Message sent—I&apos;ll be in touch soon.
+                    Message sent. I&apos;ll be in touch soon.
                   </span>
                 )}
                 {status === "error" && (

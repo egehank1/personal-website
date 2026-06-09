@@ -151,11 +151,11 @@ export const projects: Project[] = [
     year: "2025",
     caseStudy: {
       subtitle:
-        "Machine learning pipeline that segments customers by purchasing behavior — turning raw transactional data into actionable retention and marketing strategy.",
+        "Machine learning pipeline that segments customers by purchasing behavior, turning raw transactional data into actionable retention and marketing strategy.",
       sections: [
         {
           heading: "Overview",
-          body: "RFM Customer Segmentation is an end-to-end machine learning project that transforms raw transactional records into clearly defined customer segments. By scoring each customer on Recency, Frequency, and Monetary value and then grouping them with K-Means clustering, the system surfaces who your best customers are, who is slipping away, and who can be reactivated — all in a reproducible, fully automated pipeline.",
+          body: "RFM Customer Segmentation is an end-to-end machine learning project that transforms raw transactional records into clearly defined customer segments. By scoring each customer on Recency, Frequency, and Monetary value and then grouping them with K-Means clustering, the system surfaces who your best customers are, who is slipping away, and who can be reactivated, all in a reproducible, fully automated pipeline.",
         },
         {
           heading: "Problem",
@@ -171,11 +171,11 @@ export const projects: Project[] = [
           heading: "Methodology",
           body: "The pipeline follows four tightly coupled stages: clean, engineer, score, and cluster. Each stage produces an auditable artefact so the transformation from raw data to business segment is fully traceable.",
           items: [
-            "Data cleaning: removed duplicate transactions, corrected negative quantities and prices from return entries, and resolved missing Customer IDs — reducing noise by ~18% before any feature engineering began",
+            "Data cleaning: removed duplicate transactions, corrected negative quantities and prices from return entries, and resolved missing Customer IDs, reducing noise by ~18% before any feature engineering began",
             "RFM feature engineering: computed Recency (days since last purchase from the snapshot date), Frequency (distinct invoice count per customer), and Monetary (total net spend) for every unique customer in the dataset",
             "Score normalisation: applied log transformation to Monetary and Frequency distributions to reduce right-skew, then StandardScaler-normalised all three features before clustering to prevent high-spend customers from dominating the distance metric",
-            "Cluster selection: ran K-Means for k=2 through k=10, plotted Within-Cluster Sum of Squares (WCSS) via the Elbow Method, and confirmed the optimal k with Silhouette Score — landing on k=4 with a score of 0.52",
-            "Segment labelling: profiled each cluster by its median RFM centroid, mapping them to Champions, Loyal Customers, At-Risk, and Lost/Inactive — labels grounded in actual spending patterns, not arbitrary names",
+            "Cluster selection: ran K-Means for k=2 through k=10, plotted Within-Cluster Sum of Squares (WCSS) via the Elbow Method, and confirmed the optimal k with Silhouette Score, landing on k=4 with a score of 0.52",
+            "Segment labelling: profiled each cluster by its median RFM centroid, mapping them to Champions, Loyal Customers, At-Risk, and Lost/Inactive, labels grounded in actual spending patterns, not arbitrary names",
           ],
         },
         {
@@ -183,7 +183,7 @@ export const projects: Project[] = [
           items: [
             "Segmented 4,300+ unique customers into 4 behaviorally distinct groups with a Silhouette Score of 0.52, indicating well-separated, compact clusters",
             "Champions segment (top ~15% of customers) accounts for approximately 61% of total revenue, confirming a strong Pareto effect and justifying a VIP retention programme",
-            "At-Risk segment identified 820+ customers whose last purchase was 90–180 days ago — a directly actionable re-engagement list estimated to represent $38K in recoverable annual revenue",
+            "At-Risk segment identified 820+ customers whose last purchase was 90–180 days ago, a directly actionable re-engagement list estimated to represent $38K in recoverable annual revenue",
             "Lost/Inactive cluster surfaced 540+ customers silent for 180+ days, enabling the business to suppress them from expensive outbound campaigns and reduce wasted ad spend",
             "Automated the full segmentation pipeline end-to-end, replacing a manual analyst workflow that previously took 2–3 days per cycle with a repeatable notebook run under 5 minutes",
             "Cluster stability confirmed across 5 independent random seeds with fewer than 3% customer label changes, demonstrating robustness of the chosen k and preprocessing steps",
@@ -197,14 +197,14 @@ export const projects: Project[] = [
             "Snapshot-date parameterisation means Recency scores are reproducible and comparable across analysis runs without touching raw data",
             "Modular notebook structure: each stage (clean → engineer → cluster → visualise) is isolated so individual steps can be re-run after data refreshes without full pipeline re-execution",
             "Visualisation layer uses Seaborn pair plots and cluster scatter plots with centroid markers to make segment boundaries interpretable to non-technical stakeholders",
-            "RFM composite scoring grid overlaid on cluster results provides a dual-lens view — statistical clusters validated against human-readable RFM quintile bands",
+            "RFM composite scoring grid overlaid on cluster results provides a dual-lens view, statistical clusters validated against human-readable RFM quintile bands",
           ],
         },
         {
           heading: "Business Insights",
           body: "Segmentation outputs were translated directly into four differentiated marketing playbooks:",
           items: [
-            "Champions: early access to new products, referral incentives, and loyalty rewards — focus is retention and lifetime value expansion",
+            "Champions: early access to new products, referral incentives, and loyalty rewards, focus is retention and lifetime value expansion",
             "Loyal Customers: upsell and cross-sell campaigns timed to their purchase cadence, personalised product recommendations based on category history",
             "At-Risk: win-back sequences triggered at the 90-day recency threshold, offering time-limited discounts or free shipping to re-establish the purchase habit",
             "Lost/Inactive: suppressed from standard campaigns to protect deliverability; re-engagement only through low-cost channels such as low-frequency email with high-value incentives",
@@ -250,11 +250,11 @@ export const projects: Project[] = [
     year: "2024",
     caseStudy: {
       subtitle:
-        "Frontend engineering project that brings NASA JPL rover missions to life — querying real planetary data and surfacing it through an intuitive, performant web interface.",
+        "Frontend engineering project that brings NASA JPL rover missions to life, querying real planetary data and surfacing it through an intuitive, performant web interface.",
       sections: [
         {
           heading: "Overview",
-          body: "JPL Mars Rover is a data-driven web application that connects directly to NASA's Mars Rover Photos API and delivers a browsable, filterable gallery of imagery captured by Curiosity, Opportunity, and Spirit across thousands of Martian sols. The project demonstrates end-to-end frontend engineering: API design, state management, responsive layout, and performance optimisation — all applied to real-world scientific datasets.",
+          body: "JPL Mars Rover is a data-driven web application that connects directly to NASA's Mars Rover Photos API and delivers a browsable, filterable gallery of imagery captured by Curiosity, Opportunity, and Spirit across thousands of Martian sols. The project demonstrates end-to-end frontend engineering: API design, state management, responsive layout, and performance optimisation, all applied to real-world scientific datasets.",
         },
         {
           heading: "Problem",
@@ -270,7 +270,7 @@ export const projects: Project[] = [
           heading: "Architecture",
           body: "The application is structured around a thin data-access layer that abstracts NASA API calls, a lightweight state manager that tracks active rover/camera/sol selections, and a presentation layer optimised for image-heavy content.",
           items: [
-            "API layer: a dedicated module wraps all NASA Mars Rover Photos API endpoints, normalises response shapes across the three rovers, and handles pagination — keeping UI components free of fetch logic",
+            "API layer: a dedicated module wraps all NASA Mars Rover Photos API endpoints, normalises response shapes across the three rovers, and handles pagination, keeping UI components free of fetch logic",
             "Filter state: rover, camera type, and Martian sol are managed as co-dependent selectors; changing the rover resets invalid camera/sol combinations before the next request fires, preventing 400-series API errors",
             "Lazy loading: images are loaded with Intersection Observer so only in-viewport thumbnails are fetched, reducing initial payload by ~70% on gallery pages with 25+ results",
             "Earth date ↔ sol converter: a utility function maps between Martian sol numbers and Earth calendar dates using each rover's landing date as the epoch, surfaced inline on every image card",
@@ -293,7 +293,7 @@ export const projects: Project[] = [
             "Co-dependent filter validation prevents stale or invalid query parameters from reaching the API, eliminating a class of silent data-fetch failures",
             "Intersection Observer lazy loading decouples image fetch from component mount, keeping the gallery interactive even while assets are still loading",
             "Normalisation layer unifies three distinct rover API response shapes into a single ImageRecord type, so all downstream components work with one predictable interface",
-            "Error boundaries isolate failed image fetches — a broken NASA CDN link degrades a single card, not the entire gallery",
+            "Error boundaries isolate failed image fetches, a broken NASA CDN link degrades a single card, not the entire gallery",
             "Debounced sol input prevents API flooding when users type a sol number directly, respecting NASA's public rate limits",
             "Accessible keyboard navigation and ARIA labels on all interactive controls, including rover selector and camera filter dropdowns",
           ],
@@ -349,7 +349,7 @@ export const projects: Project[] = [
     year: "2024",
     caseStudy: {
       subtitle:
-        "Full-featured desktop banking system built from scratch in Java — designed around a clean OOP hierarchy, file-backed JSON persistence, and a reactive JavaFX interface.",
+        "Full-featured desktop banking system built from scratch in Java, designed around a clean OOP hierarchy, file-backed JSON persistence, and a reactive JavaFX interface.",
       sections: [
         {
           heading: "Overview",
@@ -358,9 +358,9 @@ export const projects: Project[] = [
         {
           heading: "Problem",
           items: [
-            "A bank account system must handle fundamentally different transaction types — deposits, withdrawals, and inter-account transfers — each with distinct calculation rules that cannot be conflated",
+            "A bank account system must handle fundamentally different transaction types (deposits, withdrawals, and inter-account transfers), each with distinct calculation rules that cannot be conflated",
             "Interest deductions for incoming and outgoing payments must be applied consistently across the entire account, not managed ad hoc per transaction",
-            "File-based persistence of polymorphic objects requires preserving subtype identity through a serialization round-trip — standard Gson loses type information for abstract base classes",
+            "File-based persistence of polymorphic objects requires preserving subtype identity through a serialization round-trip, and standard Gson loses type information for abstract base classes",
             "A desktop GUI must stay in sync with domain state: balance, transaction list, and sort order must all update immediately after every mutation without manual refresh logic scattered across controllers",
             "Duplicate transactions and invalid attribute ranges (e.g. interest outside 0–1) must be caught early with informative errors rather than silently corrupting account state",
           ],
@@ -379,7 +379,7 @@ export const projects: Project[] = [
           heading: "Results & Impact",
           items: [
             "Implemented a complete banking domain model across 10+ Java classes from interface definition through to GUI, demonstrating end-to-end object-oriented design ownership",
-            "Custom Gson polymorphic serializer handles 3 distinct transaction subtypes with zero data loss across write/read cycles — verified by a dedicated JUnit 5 test suite covering edge cases like copy constructors, duplicate detection, and empty accounts",
+            "Custom Gson polymorphic serializer handles 3 distinct transaction subtypes with zero data loss across write/read cycles, verified by a dedicated JUnit 5 test suite covering edge cases like copy constructors, duplicate detection, and empty accounts",
             "Interest calculation engine correctly applies configurable incoming (deposit) and outgoing (withdrawal) rates in the 0–100% range, with attribute validation enforced at both the domain and persistence boundary",
             "JavaFX account view provides 4 real-time transaction views (ascending, descending, positive-only, negative-only) without reloading from disk, keeping UI latency near zero for typical account sizes",
             "Auto-detection of transfer direction (IncomingTransfer vs OutgoingTransfer) from account ownership eliminates a class of user input error and keeps the domain model internally consistent",
@@ -389,11 +389,11 @@ export const projects: Project[] = [
         {
           heading: "Technical Highlights",
           items: [
-            "Polymorphic JSON round-trip: the custom serializer writes { CLASSNAME, INSTANCE } envelopes; the custom deserializer reads the CLASSNAME field first to instantiate the correct subtype before populating fields — a pattern applicable to any heterogeneous collection serialization problem",
+            "Polymorphic JSON round-trip: the custom serializer writes { CLASSNAME, INSTANCE } envelopes; the custom deserializer reads the CLASSNAME field first to instantiate the correct subtype before populating fields, a pattern applicable to any heterogeneous collection serialization problem",
             "Interest application on addTransaction: Payment objects receive the bank-level incoming/outgoing interest rates at insertion time, so per-transaction rates always stay in sync with the bank's configuration without requiring callers to manage it",
-            "Transfer direction inference: the GUI automatically determines whether a new transfer is an IncomingTransfer or OutgoingTransfer by comparing the entered sender/recipient fields against the current account name — no separate type selector needed",
+            "Transfer direction inference: the GUI automatically determines whether a new transfer is an IncomingTransfer or OutgoingTransfer by comparing the entered sender/recipient fields against the current account name, no separate type selector needed",
             "Validation boundaries: isTransaction_Valid() enforces interest range [0.0, 1.0] and non-negative transfer amounts before any state is mutated; violations throw TransactionAttributeException with the full transaction string for debuggability",
-            "File-per-account persistence: each account is stored as a separate JSON file (Konto <name>.json) in a configurable directory. On startup, readAccounts() scans the directory, deserialises all files, and reconstructs the in-memory map — making the bank instance fully recoverable across restarts",
+            "File-per-account persistence: each account is stored as a separate JSON file (Konto <name>.json) in a configurable directory. On startup, readAccounts() scans the directory, deserialises all files, and reconstructs the in-memory map, making the bank instance fully recoverable across restarts",
             "Copy constructors on all domain classes (Transaction, Payment, Transfer, PrivateBank) ensure safe deep copying without shared mutable state between bank instances",
           ],
         },
@@ -403,7 +403,7 @@ export const projects: Project[] = [
             "Account management: create, list, and delete bank accounts from the main view with a confirmation dialog guard on destructive operations",
             "Transaction management: add and delete Payments or Transfers per account; balance recalculates immediately after every change",
             "Payment interest engine: configurable incomingInterest and outgoingInterest rates applied at the bank level, automatically inherited by every new Payment added to any account",
-            "Transfer types: IncomingTransfer and OutgoingTransfer with automatic direction detection — the system infers which type to create based on whether the current account is the sender or recipient",
+            "Transfer types: IncomingTransfer and OutgoingTransfer with automatic direction detection, the system infers which type to create based on whether the current account is the sender or recipient",
             "Transaction views: sort by calculated amount ascending or descending; filter to show only positive (credit) or negative (debit) transactions",
             "Persistent storage: all account and transaction data survives application restarts via per-account JSON files with full subtype fidelity",
             "JavaFX dialogs: contextual input dialogs for creating Payments and Transfers, with field-level validation and user-friendly error alerts for every exception scenario",

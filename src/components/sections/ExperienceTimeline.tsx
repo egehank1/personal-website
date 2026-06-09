@@ -9,7 +9,7 @@ export function ExperienceTimeline() {
         <SectionHeading
           eyebrow="Trajectory"
           title="Experience"
-          subtitle="A condensed timeline of roles where I owned ambiguous problems end-to-end—from prototype to production metrics."
+          subtitle="A condensed timeline of roles where I owned ambiguous problems end-to-end, from prototype to production metrics."
         />
 
         <div className="relative">

@@ -16,7 +16,7 @@ export const posts: Post[] = [
     date: "2026-04-12",
     readTime: "6 min",
     content: [
-      "Treat model behavior like any other distributed system: define SLOs for latency, cost, and quality—not just accuracy on a static benchmark.",
+      "Treat model behavior like any other distributed system: define SLOs for latency, cost, and quality, not just accuracy on a static benchmark.",
       "Version prompts, tools, and retrieval corpora together. A silent drift in any one layer can look like “the model got worse” when the root cause is elsewhere.",
       "Invest in shadow traffic and canaries. Rolling out to 1% of users with automatic rollback on guardrail violations has saved more launches than any offline metric.",
       "Finally, document failure modes in plain language. The best AI products explain what the system will not do as clearly as what it will.",
@@ -26,7 +26,7 @@ export const posts: Post[] = [
     slug: "designing-for-attention-budgets",
     title: "Designing for attention budgets",
     excerpt:
-      "Minimal interfaces for dense information—patterns that keep operators in flow during incidents.",
+      "Minimal interfaces for dense information, with patterns that keep operators in flow during incidents.",
     date: "2026-02-02",
     readTime: "4 min",
     content: [
@@ -39,7 +39,7 @@ export const posts: Post[] = [
     slug: "evals-are-a-product-surface",
     title: "Evals are a product surface",
     excerpt:
-      "Why evaluation dashboards belong next to feature work—not buried in a research folder.",
+      "Why evaluation dashboards belong next to feature work, not buried in a research folder.",
     date: "2025-11-18",
     readTime: "5 min",
     content: [

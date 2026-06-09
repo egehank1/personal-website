@@ -26,8 +26,8 @@ try {
 export const metadata: Metadata = {
   metadataBase: siteUrl,
   title: {
-    default: `${site.name} — ${site.title}`,
-    template: `%s — ${site.name}`,
+    default: `${site.name} | ${site.title}`,
+    template: `%s | ${site.name}`,
   },
   description: site.description,
   applicationName: site.name,
@@ -51,12 +51,12 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: site.url,
     siteName: site.name,
-    title: `${site.name} — ${site.title}`,
+    title: `${site.name} | ${site.title}`,
     description: site.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} — ${site.title}`,
+    title: `${site.name} | ${site.title}`,
     description: site.description,
     creator: "@",
   },
