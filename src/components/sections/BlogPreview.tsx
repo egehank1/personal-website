@@ -13,7 +13,7 @@ export function BlogPreview() {
           <SectionHeading
             eyebrow="Writing"
             title="Notes from the field"
-            subtitle="Long-form thinking on shipping AI products, interface design under pressure, and evaluation as a first-class surface."
+            subtitle="Honest write-ups on real bottlenecks, decisions under pressure, and what actually worked — and what didn't."
           />
           <ScrollReveal className="sm:mb-14">
             <Link

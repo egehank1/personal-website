@@ -24,7 +24,7 @@ export function About() {
         <SectionHeading
           eyebrow="About"
           title={`Hi, I’m ${site.name.split(" ")[0]}.`}
-          subtitle="I'm a software developer who builds enterprise platforms by day and AI products on the side, from ServiceNow workflows and a Digital Product Passport system to RAG copilots and ML pipelines."
+          subtitle="I'm a software developer who builds enterprise platforms by day and AI products on the side, from ServiceNow workflows and EU-funded ESG research platforms to RAG copilots and ML pipelines."
         />
 
         <div className="grid gap-6 lg:grid-cols-[1.1fr_minmax(0,0.9fr)] lg:gap-10">

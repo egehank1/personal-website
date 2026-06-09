@@ -6,10 +6,10 @@ import { site } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: `Essays and notes by ${site.name} on AI systems, design, and shipping.`,
+  description: `Real experiences, bottlenecks, and honest retrospectives on building AI products and shipping under pressure, by ${site.name}.`,
   openGraph: {
     title: `Blog | ${site.name}`,
-    description: `Essays and notes by ${site.name} on AI systems, design, and shipping.`,
+    description: `Real experiences, bottlenecks, and honest retrospectives on building AI products and shipping under pressure, by ${site.name}.`,
     url: `${site.url}/blog`,
   },
 };
@@ -25,8 +25,8 @@ export default function BlogPage() {
           Field notes
         </h1>
         <p className="mt-4 text-sm leading-relaxed text-zinc-400 sm:text-base">
-          Longer-form pieces on building with models, designing for operators, and
-          keeping quality measurable as products evolve.
+          Experiences, bottlenecks, and retrospectives from shipping real products —
+          what hit, what broke, and what I'd do differently.
         </p>
       </header>
 

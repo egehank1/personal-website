@@ -59,7 +59,7 @@ export const experience: ExperienceItem[] = [
     company: "Hardstyle Wear",
     period: "Feb 2023 - Present",
     summary:
-      "Built and launched a fitness clothing e-commerce brand from scratch, with full brand identity, website, and social assets. Produced TikTok ad campaigns that drove 50,000+ website visitors in 24 hours, and generated over 6,500 euros in revenue while shipping 300+ products to 15+ countries. Optimised marketing performance and SEO using analytics tools.",
+      "Built and launched a fitness clothing e-commerce brand from scratch, with full brand identity, website, and social assets. Produced TikTok ad campaigns that drove 50,000+ website visitors in 24 hours, and generated over €6,500 in revenue while shipping 300+ products to 15+ countries. Optimised marketing performance and SEO using analytics tools.",
     stack: ["E-Commerce", "TikTok Ads", "Branding", "SEO"],
   },
   {
@@ -68,7 +68,7 @@ export const experience: ExperienceItem[] = [
     company: "Upstreak Media",
     period: "2019 - 2020",
     summary:
-      "SMMA agency focused on short-form content creation and social media growth. Created viral Instagram Reels totalling 3,000,000+ views and 25,000+ likes, and generated over 2,000 euros in revenue through TikTok content. Designed thumbnails, banners, and posts across motivational, wellness, and construction niches.",
+      "SMMA agency focused on short-form content creation and social media growth. Created viral Instagram Reels totalling 3,000,000+ views and 25,000+ likes, and generated over €2,000 in revenue through TikTok content. Designed thumbnails, banners, and posts across motivational, wellness, and construction niches.",
     stack: ["Instagram Reels", "TikTok", "Content Creation", "SMMA"],
   },
 ];
