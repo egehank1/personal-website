@@ -47,7 +47,7 @@ export const experience: ExperienceItem[] = [
   {
     id: "5",
     role: "Social Media Manager",
-    company: "",
+    company: "Fiverr (Freelance)",
     period: "Sep 2023 — Apr 2024",
     summary:
       "Created content for Instagram, Facebook, and YouTube using Canva, Photoshop, Canon 80D, and Rode Wireless GO. Managed accounts via Sprout Social, Khoros, and Google Analytics to improve engagement and audience growth.",
