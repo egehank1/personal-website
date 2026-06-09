@@ -7,23 +7,30 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { site } from "@/lib/config";
 
 export function Contact() {
-  const [status, setStatus] = useState<"idle" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
-    const data = new FormData(form);
-    const name = String(data.get("name") ?? "").trim();
-    const email = String(data.get("email") ?? "").trim();
-    const message = String(data.get("message") ?? "").trim();
-    const subject = encodeURIComponent(`Portfolio inquiry from ${name || "visitor"}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\n${message}`,
-    );
-    window.open(`mailto:${site.email}?subject=${subject}&body=${body}`, "_self");
-    setStatus("sent");
-    form.reset();
-    window.setTimeout(() => setStatus("idle"), 4000);
+    setStatus("sending");
+    try {
+      const res = await fetch("https://formspree.io/f/xpqelwag", {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+      if (res.ok) {
+        setStatus("sent");
+        form.reset();
+        window.setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        setStatus("error");
+        window.setTimeout(() => setStatus("idle"), 5000);
+      }
+    } catch {
+      setStatus("error");
+      window.setTimeout(() => setStatus("idle"), 5000);
+    }
   }
 
   return (
@@ -84,17 +91,24 @@ export function Contact() {
               <div className="relative mt-6 flex flex-wrap items-center gap-4">
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-zinc-950 shadow-[0_18px_60px_-26px_rgba(129,140,248,0.95)] transition hover:-translate-y-0.5"
+                  disabled={status === "sending"}
+                  className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-semibold text-zinc-950 shadow-[0_18px_60px_-26px_rgba(129,140,248,0.95)] transition hover:-translate-y-0.5 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                 >
-                  Open email draft
+                  {status === "sending" ? "Sending…" : "Send message"}
                 </button>
-                {status === "sent" ? (
+                {status === "sent" && (
                   <span className="text-xs text-emerald-300">
-                    Draft opened—send when you&apos;re ready.
+                    Message sent—I&apos;ll be in touch soon.
                   </span>
-                ) : (
+                )}
+                {status === "error" && (
+                  <span className="text-xs text-red-400">
+                    Something went wrong. Try again or email me directly.
+                  </span>
+                )}
+                {(status === "idle" || status === "sending") && (
                   <span className="text-xs text-zinc-500">
-                    Uses your default mail client—no backend required.
+                    I typically reply within two business days.
                   </span>
                 )}
               </div>
