@@ -65,7 +65,7 @@ export function Hero() {
             </span>
           </span>
           <span className="hero-tagline-in mt-3 block text-zinc-400">
-            Turning research into products.
+            Shipping ideas before they expire.
           </span>
         </motion.p>
 

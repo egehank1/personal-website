@@ -1,18 +1,18 @@
 export const techCategories = [
   {
     label: "Languages",
-    items: ["TypeScript", "Python", "Go", "Rust"],
+    items: ["TypeScript", "Python", "JavaScript", "Java"],
   },
   {
     label: "AI / ML",
-    items: ["PyTorch", "OpenAI", "Anthropic", "LangGraph", "Evals", "RAG"],
+    items: ["OpenAI", "RAG", "pgvector", "Scikit-learn", "Pandas", "LangGraph"],
   },
   {
     label: "Web",
-    items: ["Next.js", "React", "Tailwind", "Framer Motion", "WebGL"],
+    items: ["Next.js", "React", "FastAPI", "Tailwind", "Framer Motion"],
   },
   {
-    label: "Infra",
-    items: ["Kubernetes", "Terraform", "Postgres", "Redis", "Kafka"],
+    label: "Infra & Tools",
+    items: ["PostgreSQL", "Supabase", "ServiceNow", "Git", "Maven"],
   },
 ] as const;
