@@ -30,18 +30,20 @@ export function About() {
         <div className="grid gap-6 lg:grid-cols-[1.1fr_minmax(0,0.9fr)] lg:gap-10">
           <ScrollReveal className="rounded-3xl border border-white/[0.08] bg-gradient-to-br from-white/[0.06] via-white/[0.02] to-transparent p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_40px_120px_-60px_rgba(99,102,241,0.55)] backdrop-blur-xl sm:p-8">
             <p className="text-sm leading-relaxed text-zinc-300 sm:text-[15px]">
-              Right now I&apos;m a Software Developer at snacc-it, building Project
-              ETHICA, a Digital Product Passport platform that gives companies ESG
-              transparency and a full audit trail, while shipping ServiceNow workflows
-              that cut manual effort out of enterprise processes. On the side I build AI
-              and ML projects like DeepScholar, a RAG research copilot that keeps its
-              answers grounded in real, citable sources.
+              Right now I&apos;m a Software Developer at snacc-it, where I support
+              Project ETHICA, an EU-funded research project building a Digital Product
+              Passport platform for ESG transparency and compliance. Alongside that I
+              work across a range of ServiceNow areas: incident management, travel
+              reimbursement, illness reporting, and enterprise web development. On the
+              side I build AI and ML projects like DeepScholar, a RAG research copilot
+              that keeps its answers grounded in real, citable sources.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
               Before this I worked as a quantitative developer building trading bots,
-              tutored 200+ students in computer science at FH Aachen, and founded an
-              e-commerce brand from scratch. I write about what I learn on Medium, usually
-              about building AI products people can actually trust.
+              tutored 200+ students in computer science at FH Aachen, and founded a
+              fitness clothing e-commerce brand that hit 6,500+ euros in revenue. I
+              write about what I learn on Medium, usually about building AI products
+              people can actually trust.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
               {["Aachen, Germany", "Remote-friendly", "Open to roles"].map((chip) => (

@@ -14,7 +14,7 @@ export const experience: ExperienceItem[] = [
     company: "snacc-it",
     period: "Mar 2025 - Present",
     summary:
-      "Currently working on Project ETHICA, a Digital Product Passport platform that gives companies ESG transparency, compliance, and a full audit trail across their products. Alongside that I build on ServiceNow day to day, covering incident management, travel reimbursement workflows, an enterprise illness reporting process, and enterprise website development. Most of the work is client and server side scripting, catalog items, and Service Portal configuration to cut down manual effort in internal processes.",
+      "Supporting Project ETHICA, an EU-funded research project building a Digital Product Passport platform for ESG transparency, compliance, and a full audit trail across products. Alongside that I work across a range of ServiceNow areas day to day: incident management, travel reimbursement workflows, an enterprise illness reporting process, and enterprise website development. Most of the work is client and server side scripting, catalog items, and Service Portal configuration to cut down manual effort in internal processes.",
     stack: ["ServiceNow", "Digital Product Passport", "ESG", "ITSM", "JavaScript"],
   },
   {
@@ -59,7 +59,7 @@ export const experience: ExperienceItem[] = [
     company: "Hardstyle Wear",
     period: "Feb 2023 - Present",
     summary:
-      "Built and launched a streetwear e-commerce brand from scratch, with full brand identity, website, and social assets. Produced TikTok ad campaigns that drove 50,000+ website visitors in 24 hours, and generated over 4,400 euros in revenue while shipping 300+ products to 15+ countries. Optimised marketing performance and SEO using analytics tools.",
+      "Built and launched a fitness clothing e-commerce brand from scratch, with full brand identity, website, and social assets. Produced TikTok ad campaigns that drove 50,000+ website visitors in 24 hours, and generated over 6,500 euros in revenue while shipping 300+ products to 15+ countries. Optimised marketing performance and SEO using analytics tools.",
     stack: ["E-Commerce", "TikTok Ads", "Branding", "SEO"],
   },
   {
