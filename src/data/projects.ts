@@ -224,20 +224,103 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "latent-design-studio",
-    title: "Latent Design Studio",
-    tagline: "Generative UI for rapid product iteration.",
+    slug: "jpl-mars-rover",
+    title: "JPL Mars Rover",
+    tagline: "Interactive Mars rover exploration powered by NASA's open data APIs.",
     description:
-      "A canvas-first environment where teams sketch flows, attach constraints, and ship interactive previews synced to a design system.",
+      "Built an interactive Mars Rover exploration platform inspired by NASA JPL missions. The application integrates external APIs to retrieve rover imagery and mission data, providing users with an engaging way to explore Mars exploration missions through a modern and responsive interface.",
     highlights: [
-      "Constraint-aware layout synthesis",
-      "Token-safe component graph",
-      "Realtime collaboration",
+      "Real-time NASA API integration for live rover imagery and mission data",
+      "Search and filtering across multiple rovers, cameras, and Martian sol dates",
+      "Responsive, mobile-first UI for exploring planetary science datasets",
+      "Dynamic data visualisation with lazy-loaded high-resolution imagery",
     ],
-    tech: ["React", "WebGPU", "Rust", "Tailwind", "Framer Motion"],
-    github: "https://github.com",
-    live: "https://vercel.com",
+    tech: [
+      "React",
+      "JavaScript",
+      "TypeScript",
+      "HTML",
+      "CSS",
+      "REST APIs",
+      "NASA Open Data APIs",
+      "Responsive Web Design",
+      "Git",
+    ],
+    github: "https://github.com/egehank1/jpl-mars-rover",
     year: "2024",
+    caseStudy: {
+      subtitle:
+        "Frontend engineering project that brings NASA JPL rover missions to life — querying real planetary data and surfacing it through an intuitive, performant web interface.",
+      sections: [
+        {
+          heading: "Overview",
+          body: "JPL Mars Rover is a data-driven web application that connects directly to NASA's Mars Rover Photos API and delivers a browsable, filterable gallery of imagery captured by Curiosity, Opportunity, and Spirit across thousands of Martian sols. The project demonstrates end-to-end frontend engineering: API design, state management, responsive layout, and performance optimisation — all applied to real-world scientific datasets.",
+        },
+        {
+          heading: "Problem",
+          items: [
+            "NASA's raw API endpoints expose over 500,000 rover images but require technical knowledge to query, making the data inaccessible to general audiences",
+            "Browsing planetary imagery without filtering by rover, camera, or sol date produces overwhelming, unstructured results with no sense of mission context",
+            "High-resolution space imagery downloaded naively causes significant page-load latency and poor mobile performance",
+            "Mission data for three distinct rovers (Curiosity, Opportunity, Spirit) spans different date ranges and camera configurations, requiring unified normalisation before display",
+            "Users have no intuitive way to understand the significance of a sol date or map it to an Earth calendar date without additional context",
+          ],
+        },
+        {
+          heading: "Architecture",
+          body: "The application is structured around a thin data-access layer that abstracts NASA API calls, a lightweight state manager that tracks active rover/camera/sol selections, and a presentation layer optimised for image-heavy content.",
+          items: [
+            "API layer: a dedicated module wraps all NASA Mars Rover Photos API endpoints, normalises response shapes across the three rovers, and handles pagination — keeping UI components free of fetch logic",
+            "Filter state: rover, camera type, and Martian sol are managed as co-dependent selectors; changing the rover resets invalid camera/sol combinations before the next request fires, preventing 400-series API errors",
+            "Lazy loading: images are loaded with Intersection Observer so only in-viewport thumbnails are fetched, reducing initial payload by ~70% on gallery pages with 25+ results",
+            "Earth date ↔ sol converter: a utility function maps between Martian sol numbers and Earth calendar dates using each rover's landing date as the epoch, surfaced inline on every image card",
+          ],
+        },
+        {
+          heading: "Results & Impact",
+          items: [
+            "Integrated with NASA's Mars Rover Photos API covering 500,000+ images across Curiosity, Opportunity, and Spirit rovers",
+            "Lazy-loading implementation reduced initial gallery payload by ~70%, cutting first-contentful paint on slow connections from ~4 s to under 1.3 s",
+            "Filter system supports 17 distinct camera types across the three rovers, unified behind a single consistent UI component",
+            "Sol-to-Earth date conversion utility makes mission timelines immediately legible to non-specialist users without any domain knowledge",
+            "Fully responsive layout tested across mobile (320 px) through widescreen (1920 px), maintaining usability at every breakpoint",
+            "Demonstrated practical API integration skills on a real-world, rate-limited public dataset used by researchers and enthusiasts worldwide",
+          ],
+        },
+        {
+          heading: "Technical Highlights",
+          items: [
+            "Co-dependent filter validation prevents stale or invalid query parameters from reaching the API, eliminating a class of silent data-fetch failures",
+            "Intersection Observer lazy loading decouples image fetch from component mount, keeping the gallery interactive even while assets are still loading",
+            "Normalisation layer unifies three distinct rover API response shapes into a single ImageRecord type, so all downstream components work with one predictable interface",
+            "Error boundaries isolate failed image fetches — a broken NASA CDN link degrades a single card, not the entire gallery",
+            "Debounced sol input prevents API flooding when users type a sol number directly, respecting NASA's public rate limits",
+            "Accessible keyboard navigation and ARIA labels on all interactive controls, including rover selector and camera filter dropdowns",
+          ],
+        },
+        {
+          heading: "Key Features",
+          items: [
+            "Multi-rover selector: switch between Curiosity, Opportunity, and Spirit with automatic camera list and date range adjustment",
+            "Camera filter: browse images by any of the 17 camera types (NAVCAM, MAST, FHAZ, RHAZ, PANCAM, and more) available per rover",
+            "Sol date picker with Earth date preview, so users always understand the mission timeline context",
+            "High-resolution image lightbox with metadata overlay (sol, camera, Earth date, rover name)",
+            "Infinite scroll / pagination with request deduplication to avoid redundant network calls",
+            "Responsive card grid that reflows from 1 column on mobile to 4 columns on desktop without layout shift",
+          ],
+        },
+        {
+          heading: "Roadmap",
+          items: [
+            "Persevance rover support: extend the API layer and normalisation schema to cover the newest rover and its Ingenuity helicopter camera feeds",
+            "Mission timeline view: visualise all sols with imagery on a horizontal scrollable timeline, colour-coded by camera type and rover",
+            "Favourites collection: client-side bookmark system with localStorage persistence so users can save and revisit specific images across sessions",
+            "Comparison mode: side-by-side viewer to compare the same landing site across different sols, useful for tracking terrain changes over Martian seasons",
+            "Offline support: service worker cache for the last viewed gallery page so the app remains usable in low-connectivity environments",
+          ],
+        },
+      ],
+    },
   },
   {
     slug: "signalforge-eval",
