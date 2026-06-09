@@ -31,8 +31,8 @@ export function About() {
           <ScrollReveal className="rounded-3xl border border-white/[0.08] bg-gradient-to-br from-white/[0.06] via-white/[0.02] to-transparent p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_40px_120px_-60px_rgba(99,102,241,0.55)] backdrop-blur-xl sm:p-8">
             <p className="text-sm leading-relaxed text-zinc-300 sm:text-[15px]">
               Right now I&apos;m a Software Developer at snacc-it, where I support
-              Project ETHICA, an EU-funded research project building a Digital Product
-              Passport platform for ESG transparency and compliance. Alongside that I
+              Project ETHICA, an EU-funded research project building an ESG transparency
+              and compliance platform. Alongside that I
               work across a range of ServiceNow areas: incident management, travel
               reimbursement, illness reporting, and enterprise web development. On the
               side I build AI and ML projects like DeepScholar, a RAG research copilot
