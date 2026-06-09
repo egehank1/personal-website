@@ -46,7 +46,7 @@ export function About() {
               usually about building AI products people can actually trust.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              {["Aachen, Germany", "Remote-friendly", "Open to roles"].map((chip) => (
+              {["Aachen, Germany", "Remote-friendly", "AI & ML focused"].map((chip) => (
                 <div
                   key={chip}
                   className="rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-xs font-medium uppercase tracking-[0.18em] text-zinc-400"
