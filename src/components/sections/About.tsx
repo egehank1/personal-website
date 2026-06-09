@@ -40,8 +40,8 @@ export function About() {
             </p>
             <p className="mt-4 text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
               Before this I worked as a quantitative developer building trading bots,
-              tutored 200+ students in computer science at FH Aachen, and co-founded
-              a SMMA agency and a fitness clothing e-commerce brand — together
+              tutored 200+ students in computer science at FH Aachen,               and co-founded
+              a SMMA agency and a fitness clothing e-commerce brand, together
               generating €6,500+ in revenue. I write about what I learn on Medium,
               usually about building AI products people can actually trust.
             </p>
