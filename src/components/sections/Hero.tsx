@@ -58,7 +58,7 @@ export function Hero() {
           className="mt-8 max-w-2xl text-base leading-relaxed text-zinc-400 sm:text-lg"
         >
           <span className="text-zinc-300">
-            AI engineer building intelligent systems — from{" "}
+            AI-passionate software developer — working with{" "}
             <span className="font-medium text-zinc-100">
               <span className="tabular-nums">{typed}</span>
               <span className="ml-0.5 inline-block h-[1.1em] w-px translate-y-0.5 bg-violet-400/80 align-middle animate-pulse" />

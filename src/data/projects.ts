@@ -323,19 +323,104 @@ export const projects: Project[] = [
     },
   },
   {
-    slug: "signalforge-eval",
-    title: "SignalForge Eval",
-    tagline: "Evaluation harness for multimodal models.",
+    slug: "bank-application",
+    title: "Bank Application",
+    tagline: "Object-oriented Java banking system with JavaFX GUI and JSON persistence.",
     description:
-      "Benchmarking suite for vision-language tasks with regression detection, golden sets, and diffable reports for stakeholders.",
+      "A full-featured desktop banking application built in Java, implementing account and transaction management across a clean OOP hierarchy. The system persists all data as JSON files via a custom Gson serializer and exposes a two-scene JavaFX GUI for real-time account and transaction operations.",
     highlights: [
-      "Deterministic replay for flaky tests",
-      "Statistical drift alerts",
-      "Exportable audit trails",
+      "Polymorphic transaction hierarchy: Payment, IncomingTransfer, OutgoingTransfer with interest calculation",
+      "Custom Gson serializer/deserializer preserving full polymorphic type information across JSON round-trips",
+      "JavaFX two-scene GUI with real-time balance updates, sorting, and transaction filtering",
+      "5 domain-specific custom exceptions with full validation at every system boundary",
+      "JUnit 5 test suite covering Payment, Transfer, PrivateBank, and PrivateBankAlt classes",
     ],
-    tech: ["TypeScript", "PyTorch", "Ray", "S3", "Datadog"],
-    github: "https://github.com",
+    tech: [
+      "Java",
+      "JavaFX",
+      "FXML",
+      "Gson",
+      "JUnit 5",
+      "Maven",
+      "OOP Design Patterns",
+      "JSON Persistence",
+    ],
+    github: "https://github.com/egehank1/Bank_Application",
     year: "2024",
+    caseStudy: {
+      subtitle:
+        "Full-featured desktop banking system built from scratch in Java — designed around a clean OOP hierarchy, file-backed JSON persistence, and a reactive JavaFX interface.",
+      sections: [
+        {
+          heading: "Overview",
+          body: "Bank Application is a multi-iteration Java project built across five development phases (P1–P5), growing from a plain domain model into a fully interactive desktop application. The final system manages bank accounts and their transaction histories through a two-scene JavaFX GUI, persists all state to the filesystem as JSON using a custom Gson adapter, and enforces strict domain rules through a typed exception hierarchy and attribute validation at every layer.",
+        },
+        {
+          heading: "Problem",
+          items: [
+            "A bank account system must handle fundamentally different transaction types — deposits, withdrawals, and inter-account transfers — each with distinct calculation rules that cannot be conflated",
+            "Interest deductions for incoming and outgoing payments must be applied consistently across the entire account, not managed ad hoc per transaction",
+            "File-based persistence of polymorphic objects requires preserving subtype identity through a serialization round-trip — standard Gson loses type information for abstract base classes",
+            "A desktop GUI must stay in sync with domain state: balance, transaction list, and sort order must all update immediately after every mutation without manual refresh logic scattered across controllers",
+            "Duplicate transactions and invalid attribute ranges (e.g. interest outside 0–1) must be caught early with informative errors rather than silently corrupting account state",
+          ],
+        },
+        {
+          heading: "Architecture",
+          body: "The system is structured in three layers: a domain model, a persistence layer, and a JavaFX presentation layer. All three communicate through clearly defined interfaces and a shared exception hierarchy.",
+          items: [
+            "Domain model: abstract Transaction base class extended by Payment (deposits/withdrawals) and Transfer (IncomingTransfer, OutgoingTransfer). Each subclass implements the calculate() method from the CalculateBill interface, encapsulating all interest logic locally",
+            "Bank interface + PrivateBank: the Bank interface defines the full account management contract (createAccount, addTransaction, removeTransaction, getAccountBalance, getTransactionsSorted, getTransactionsByType). PrivateBank implements it with a Map<String, List<Transaction>> as the in-memory store, plus full JSON persistence on every mutating operation",
+            "Persistence layer: custom Gson JsonSerializer and JsonDeserializer embed a CLASSNAME discriminator field alongside the INSTANCE payload, enabling accurate type reconstruction (Payment vs IncomingTransfer vs OutgoingTransfer) on read-back without reflection hacks",
+            "JavaFX presentation layer: two FXML-declared scenes (main-view and account-view) each backed by a dedicated controller. Scene transitions pass the selected account name and the shared PrivateBank instance between controllers, keeping a single bank object as the source of truth throughout the session",
+          ],
+        },
+        {
+          heading: "Results & Impact",
+          items: [
+            "Implemented a complete banking domain model across 10+ Java classes from interface definition through to GUI, demonstrating end-to-end object-oriented design ownership",
+            "Custom Gson polymorphic serializer handles 3 distinct transaction subtypes with zero data loss across write/read cycles — verified by a dedicated JUnit 5 test suite covering edge cases like copy constructors, duplicate detection, and empty accounts",
+            "Interest calculation engine correctly applies configurable incoming (deposit) and outgoing (withdrawal) rates in the 0–100% range, with attribute validation enforced at both the domain and persistence boundary",
+            "JavaFX account view provides 4 real-time transaction views (ascending, descending, positive-only, negative-only) without reloading from disk, keeping UI latency near zero for typical account sizes",
+            "Auto-detection of transfer direction (IncomingTransfer vs OutgoingTransfer) from account ownership eliminates a class of user input error and keeps the domain model internally consistent",
+            "5 domain-specific exception types (AccountAlreadyExistsException, AccountDoesNotExistException, TransactionAlreadyExistException, TransactionDoesNotExistException, TransactionAttributeException) provide precise, actionable error messages surfaced directly in JavaFX Alert dialogs",
+          ],
+        },
+        {
+          heading: "Technical Highlights",
+          items: [
+            "Polymorphic JSON round-trip: the custom serializer writes { CLASSNAME, INSTANCE } envelopes; the custom deserializer reads the CLASSNAME field first to instantiate the correct subtype before populating fields — a pattern applicable to any heterogeneous collection serialization problem",
+            "Interest application on addTransaction: Payment objects receive the bank-level incoming/outgoing interest rates at insertion time, so per-transaction rates always stay in sync with the bank's configuration without requiring callers to manage it",
+            "Transfer direction inference: the GUI automatically determines whether a new transfer is an IncomingTransfer or OutgoingTransfer by comparing the entered sender/recipient fields against the current account name — no separate type selector needed",
+            "Validation boundaries: isTransaction_Valid() enforces interest range [0.0, 1.0] and non-negative transfer amounts before any state is mutated; violations throw TransactionAttributeException with the full transaction string for debuggability",
+            "File-per-account persistence: each account is stored as a separate JSON file (Konto <name>.json) in a configurable directory. On startup, readAccounts() scans the directory, deserialises all files, and reconstructs the in-memory map — making the bank instance fully recoverable across restarts",
+            "Copy constructors on all domain classes (Transaction, Payment, Transfer, PrivateBank) ensure safe deep copying without shared mutable state between bank instances",
+          ],
+        },
+        {
+          heading: "Key Features",
+          items: [
+            "Account management: create, list, and delete bank accounts from the main view with a confirmation dialog guard on destructive operations",
+            "Transaction management: add and delete Payments or Transfers per account; balance recalculates immediately after every change",
+            "Payment interest engine: configurable incomingInterest and outgoingInterest rates applied at the bank level, automatically inherited by every new Payment added to any account",
+            "Transfer types: IncomingTransfer and OutgoingTransfer with automatic direction detection — the system infers which type to create based on whether the current account is the sender or recipient",
+            "Transaction views: sort by calculated amount ascending or descending; filter to show only positive (credit) or negative (debit) transactions",
+            "Persistent storage: all account and transaction data survives application restarts via per-account JSON files with full subtype fidelity",
+            "JavaFX dialogs: contextual input dialogs for creating Payments and Transfers, with field-level validation and user-friendly error alerts for every exception scenario",
+          ],
+        },
+        {
+          heading: "Roadmap",
+          items: [
+            "REST API layer: expose the Bank interface as a Spring Boot REST API so the domain model can serve web and mobile clients beyond the desktop GUI",
+            "Database persistence: replace file-based JSON storage with a relational schema (PostgreSQL) to support concurrent access, transactions with rollback, and indexed balance queries",
+            "Authentication: add per-user account ownership so multiple bank customers can log in and access only their own accounts",
+            "Transaction history charts: visualise balance over time per account using JavaFX charts, providing at-a-glance spending and deposit trends",
+            "Scheduled interest application: implement a periodic job that applies interest to all accounts on a configurable schedule, simulating real bank interest accrual",
+          ],
+        },
+      ],
+    },
   },
 ];
 
