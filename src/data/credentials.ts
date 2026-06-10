@@ -79,7 +79,6 @@ export const credentials: Credential[] = [
     description:
       "Online course authorised by Michigan State University and delivered through Coursera, covering cameras, exposure techniques, and photographic composition.",
     filePath: "/credentials/cameras-exposure-photography-michigan-state-university.jpg",
-    credentialUrl: "https://coursera.org/verify/24Y3XBI2RM2A",
     tags: ["Photography", "Cameras", "Exposure", "Coursera"],
   },
   {
