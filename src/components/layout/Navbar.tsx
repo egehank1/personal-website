@@ -2,7 +2,6 @@
 
 import { AnimatePresence, motion, useScroll, useMotionValueEvent } from "framer-motion";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
 import { site } from "@/lib/config";
 
@@ -11,12 +10,10 @@ const links = [
   { href: "/#projects", label: "Projects" },
   { href: "/#experience", label: "Experience" },
   { href: "/#stack", label: "Stack" },
-  { href: "/blog", label: "Blog" },
   { href: "/#contact", label: "Contact" },
 ];
 
 export function Navbar() {
-  const pathname = usePathname();
   const { scrollY } = useScroll();
   const lastY = useRef(0);
   const [hidden, setHidden] = useState(false);
@@ -59,8 +56,7 @@ export function Navbar() {
 
           <nav className="hidden items-center gap-1 md:flex">
             {links.map((l) => {
-              const active =
-                l.href === "/blog" ? pathname.startsWith("/blog") : false;
+              const active = false;
               return (
                 <Link
                   key={l.href}

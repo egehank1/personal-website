@@ -28,7 +28,18 @@ export function ExperienceTimeline() {
                     <p className="mt-2 font-display text-lg font-semibold text-white sm:text-xl">
                       {item.role}
                     </p>
-                    <p className="text-sm text-violet-200/90">{item.company}</p>
+                    {item.companyUrl ? (
+                      <a
+                        href={item.companyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-violet-200/90 hover:text-violet-300 underline underline-offset-2 decoration-violet-400/50 transition-colors"
+                      >
+                        {item.company}
+                      </a>
+                    ) : (
+                      <p className="text-sm text-violet-200/90">{item.company}</p>
+                    )}
                   </div>
                   <div className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-5 backdrop-blur-xl sm:p-6">
                     <p className="text-sm leading-relaxed text-zinc-300">

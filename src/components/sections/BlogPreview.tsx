@@ -13,7 +13,7 @@ export function BlogPreview() {
           <SectionHeading
             eyebrow="Writing"
             title="Notes from the field"
-            subtitle="Honest write-ups on real bottlenecks, decisions under pressure, and what actually worked — and what didn't."
+            subtitle="Honest write-ups on real bottlenecks, decisions under pressure, and what actually worked and what didn't."
           />
           <ScrollReveal className="sm:mb-14">
             <Link

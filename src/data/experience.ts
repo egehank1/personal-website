@@ -2,6 +2,7 @@ export type ExperienceItem = {
   id: string;
   role: string;
   company: string;
+  companyUrl?: string;
   period: string;
   summary: string;
   stack: string[];
@@ -10,15 +11,25 @@ export type ExperienceItem = {
 export const experience: ExperienceItem[] = [
   {
     id: "1",
+    role: "Founder",
+    company: "Hardstyle Wear",
+    companyUrl: "https://www.hardstylewear.com",
+    period: "Feb 2023 - Present",
+    summary:
+      "Built and launched a fitness clothing e-commerce brand from scratch. Designed the brand identity, built the Shopify storefront, and set up the full stack from payment processing to automated order fulfilment. hardstylewear.com is still live and running to this day. Ran paid ad campaigns that drove 50,000+ website visitors in 24 hours, and generated over €4,400 in revenue while shipping 300+ products to 15+ countries. Used Google Analytics and Meta Pixel to track conversion funnels and iterate on landing pages.",
+    stack: ["Shopify", "E-Commerce", "Google Analytics", "Meta Pixel", "Branding", "SEO"],
+  },
+  {
+    id: "2",
     role: "Software Developer",
     company: "snacc-it",
     period: "Mar 2025 - Present",
     summary:
-      "Supporting Project ETHICA, an EU-funded research project building a Digital Product Passport platform for ESG transparency, compliance, and a full audit trail across products. Alongside that I work across a range of ServiceNow areas day to day: incident management, travel reimbursement workflows, an enterprise illness reporting process, and enterprise website development. Most of the work is client and server side scripting, catalog items, and Service Portal configuration to cut down manual effort in internal processes.",
-    stack: ["ServiceNow", "Digital Product Passport", "ESG", "ITSM", "JavaScript"],
+      "Supporting Project ETHICA, a €6.2M CELTIC-NEXT / EUREKA European research initiative. Day to day I work across ServiceNow: building catalog items, writing client and server-side scripts, configuring Service Portal widgets, and automating internal workflows like incident management, travel reimbursement, and illness reporting. Also handling enterprise website development and keeping the platform integrations running cleanly.",
+    stack: ["ServiceNow", "JavaScript", "Service Portal", "ITSM", "Workflow Automation", "REST APIs"],
   },
   {
-    id: "2",
+    id: "3",
     role: "Quantitative Developer",
     company: "Aachen Investment Club e.V.",
     period: "Mar 2025 - Aug 2025",
@@ -27,7 +38,7 @@ export const experience: ExperienceItem[] = [
     stack: ["Python", "Trading Bot", "Quantitative Finance", "Data Analysis"],
   },
   {
-    id: "3",
+    id: "4",
     role: "Computer Science Tutor",
     company: "FH Aachen University of Applied Sciences",
     period: "Aug 2024 - Feb 2025",
@@ -36,7 +47,7 @@ export const experience: ExperienceItem[] = [
     stack: ["Algorithms", "Programming", "Teaching"],
   },
   {
-    id: "4",
+    id: "5",
     role: "Marketing Manager",
     company: "AcIAS e. V.",
     period: "Apr 2024 - Feb 2025",
@@ -45,22 +56,13 @@ export const experience: ExperienceItem[] = [
     stack: ["Instagram", "Digital Marketing", "Content Strategy"],
   },
   {
-    id: "5",
+    id: "6",
     role: "Social Media Manager",
     company: "Fiverr (Freelance)",
     period: "Sep 2023 - Apr 2024",
     summary:
       "Created content for Instagram, Facebook, and YouTube using Canva, Photoshop, Canon 80D, and Rode Wireless GO. Managed accounts via Sprout Social, Khoros, and Google Analytics to improve engagement and audience growth.",
     stack: ["Canva", "Photoshop", "Sprout Social", "Google Analytics"],
-  },
-  {
-    id: "6",
-    role: "Founder",
-    company: "Hardstyle Wear",
-    period: "Feb 2023 - Present",
-    summary:
-      "Built and launched a fitness clothing e-commerce brand from scratch, with full brand identity, website, and social assets. Produced TikTok ad campaigns that drove 50,000+ website visitors in 24 hours, and generated over €6,500 in revenue while shipping 300+ products to 15+ countries. Optimised marketing performance and SEO using analytics tools.",
-    stack: ["E-Commerce", "TikTok Ads", "Branding", "SEO"],
   },
   {
     id: "7",

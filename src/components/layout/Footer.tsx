@@ -3,7 +3,6 @@ import { site } from "@/lib/config";
 
 const footerLinks = [
   { href: "/#projects", label: "Projects" },
-  { href: "/blog", label: "Blog" },
   { href: site.social.github, label: "GitHub", external: true },
   { href: site.social.linkedin, label: "LinkedIn", external: true },
   { href: site.social.medium, label: "Medium", external: true },
@@ -46,7 +45,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/[0.04] py-4 text-center text-xs text-zinc-500">
-        © {new Date().getFullYear()} {site.name}.
+        © 2025 {site.name}.
       </div>
     </footer>
   );

@@ -1,6 +1,5 @@
 import { HomeScrollReset } from "@/components/layout/HomeScrollReset";
 import { About } from "@/components/sections/About";
-import { BlogPreview } from "@/components/sections/BlogPreview";
 import { Contact } from "@/components/sections/Contact";
 import { ExperienceTimeline } from "@/components/sections/ExperienceTimeline";
 import { FeaturedProjects } from "@/components/sections/FeaturedProjects";
@@ -16,7 +15,6 @@ export default function Home() {
       <FeaturedProjects />
       <ExperienceTimeline />
       <TechStackGrid />
-      <BlogPreview />
       <Contact />
     </>
   );

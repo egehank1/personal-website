@@ -25,8 +25,8 @@ export default function BlogPage() {
           Field notes
         </h1>
         <p className="mt-4 text-sm leading-relaxed text-zinc-400 sm:text-base">
-          Experiences, bottlenecks, and retrospectives from shipping real products —
-          what hit, what broke, and what I&apos;d do differently.
+          Experiences, bottlenecks, and retrospectives from shipping real products.
+          What hit, what broke, and what I&apos;d do differently.
         </p>
       </header>
 
