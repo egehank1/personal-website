@@ -114,4 +114,15 @@ export const credentials: Credential[] = [
     filePath: "/credentials/recommendation-letter-black-hole-physics.jpg",
     tags: ["Physics", "Özyeğin University", "Academic Excellence"],
   },
+  {
+    id: "arduino-certificate-2014",
+    title: "Arduino Robotics & Creative Technology Olympiad",
+    issuer: "National Arduino Robotics Olympiad (Turkey)",
+    date: "Nov 2014",
+    type: "award",
+    description:
+      "Excellence Completion Certificate for achieving 2nd place in the Turkey-wide National Arduino Robotics Olympiad for Middle Schools, 2014, alongside teammate Beyazit Nural. Recognised for exceptional robotics engineering, creative problem-solving, and technical excellence.",
+    filePath: "/credentials/arduino_certificate_2014.pdf",
+    tags: ["Arduino", "Robotics", "Olympiad", "Creative Technology", "Embedded Systems"],
+  },
 ];
