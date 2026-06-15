@@ -15,7 +15,7 @@ export const experience: ExperienceItem[] = [
     company: "snacc-it",
     period: "Mar 2025 - Present",
     summary:
-      "Working on Project ETHICA, a €6.2M EU-funded AI research initiative backed by CELTIC-NEXT / EUREKA, a European R&D consortium. Built and deployed end-to-end ServiceNow applications that automated 3+ critical business workflows including incident management, travel reimbursement, and illness reporting, cutting manual overhead across the org.",
+      "Contributing to Project ETHICA, a €6.2M EU-funded R&D initiative building a Digital Product Passport platform that uses LLMs and RAG to automate ESG compliance verification across global supply chains. Built and deployed end-to-end ServiceNow applications automating incident management, travel reimbursement, and illness reporting workflows. Also maintained and optimized the company enterprise website across production environments.",
     stack: ["ServiceNow", "JavaScript", "Workflow Automation", "Service Portal", "ITSM", "REST APIs"],
   },
   {
@@ -70,7 +70,7 @@ export const experience: ExperienceItem[] = [
     company: "Upstreak Media",
     period: "2019 - 2020",
     summary:
-      "Co-founded an SMMA agency producing short-form content across social platforms. Grew client accounts with Instagram Reels that hit 3,000,000+ views and 25,000+ likes, and generated €2,000+ through TikTok content. Handled design across motivational, wellness, and construction niches.",
-    stack: ["Instagram Reels", "TikTok", "Content Creation", "SMMA"],
+      "Co-founded a Social Media Marketing Agency (SMMA) producing short-form content across social platforms. Grew client accounts with Instagram Reels that hit 3,000,000+ views and 25,000+ likes, and generated €2,000+ through TikTok content. Handled design across motivational, wellness, and construction niches.",
+    stack: ["Instagram Reels", "TikTok", "Content Creation", "Social Media Marketing"],
   },
 ];

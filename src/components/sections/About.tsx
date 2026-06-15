@@ -5,15 +5,15 @@ import { site } from "@/lib/config";
 const pillars = [
   {
     title: "Trust by design",
-    body: "I'd rather ship AI that admits what it doesn't know. In DeepScholar, every answer cites a real passage or says it can't answer. No fabricated sources, no confident guesses.",
+    body: "I care a lot about building AI that's honest about its limits. In DeepScholar, every answer links back to a real source or tells you it can't find one. No hallucinations, no false confidence.",
   },
   {
     title: "Range across the stack",
-    body: "Next.js and FastAPI, Python ML pipelines, Java systems, ServiceNow scripting, even a trading bot. I follow the problem wherever it leads instead of staying in one lane.",
+    body: "I've worked across Next.js, FastAPI, Python ML pipelines, Java, ServiceNow, and algorithmic trading systems. I pick up whatever the project needs and figure it out.",
   },
   {
     title: "The boring parts matter",
-    body: "Validation at every boundary, reproducible pipelines, and clean data the rest of a team can rely on. Most of what makes software trustworthy is unglamorous, and I lean into it.",
+    body: "Clean data, proper validation, and pipelines others can actually read and maintain. The unglamorous stuff is usually what separates projects that hold up from ones that don't.",
   },
 ];
 
@@ -40,10 +40,10 @@ export function About() {
             </p>
             <p className="mt-4 text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
               Before this I worked as a quantitative developer building trading bots,
-              tutored 200+ students in computer science at FH Aachen,               and co-founded
-              a SMMA agency and a fitness clothing e-commerce brand, together
-              generating €6,500+ in revenue. I write about what I learn on Medium,
-              usually about building AI products people can actually trust.
+              tutored 200+ students in computer science at FH Aachen, and co-founded
+              a Social Media Marketing Agency and a fitness clothing e-commerce brand,
+              generating €4,400+ in product sales and €2,000+ in content revenue.
+              I write about RAG architecture, LLM evaluation, and production ML on Medium.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
               {["Aachen, Germany", "Remote-friendly", "AI & ML focused"].map((chip) => (
