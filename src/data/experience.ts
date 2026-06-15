@@ -43,7 +43,7 @@ export const experience: ExperienceItem[] = [
     company: "FH Aachen University of Applied Sciences",
     period: "Aug 2024 - Feb 2025",
     summary:
-      "Tutored 200+ students in Fundamentals of Computer Science and Advanced Programming Languages across 7 months, covering C++, algorithms, data structures, and memory management. Ran coding labs and guided students through assignments, with a focus on making hard topics click through worked examples.",
+      "Tutored 200+ students in Fundamentals of Computer Science and Advanced Programming Languages across 6 months, covering C++, algorithms, data structures, and memory management. Ran coding labs and guided students through assignments, with a focus on making hard topics click through worked examples.",
     stack: ["C++", "Algorithms", "Data Structures", "Teaching"],
   },
   {

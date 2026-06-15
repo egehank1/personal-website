@@ -7,6 +7,7 @@ export type EducationItem = {
   period: string;
   gpa: string;
   gpaNote: string;
+  highlights: string[];
   coursework: string[];
   skills: string[];
 };
@@ -21,6 +22,11 @@ export const education: EducationItem[] = [
     period: "Aug 2023 – Aug 2026",
     gpa: "1.4",
     gpaNote: "German Scale",
+    highlights: [
+      "Maintaining a GPA of 1.4 (German scale: 1.0 = highest), reflecting strong and consistent academic performance.",
+      "Selected as an e-fellows.net scholar, a merit-based scholarship awarded to high-achieving students in STEM, renewed April 2026.",
+      "Tutored peers in Fundamentals of CS and Advanced Programming Languages (C++) across 2 semesters, reinforcing both technical and communication skills.",
+    ],
     coursework: [
       "Advanced Mathematics I & II",
       "Fundamentals of Computer Science and High-Level Programming",
@@ -74,8 +80,13 @@ export const education: EducationItem[] = [
     degree: "Bachelor's degree",
     field: "Computer Science",
     period: "Sep 2021 – Sep 2022",
-    gpa: "3.3",
+    gpa: "3.4",
     gpaNote: "US Scale",
+    highlights: [
+      "Completed 8 foundational engineering and Computer Science courses with a GPA of 3.4/4.0.",
+      "Assisted a professor with laboratory research in black hole physics, gaining early exposure to applied scientific work.",
+      "Transferred to FH Aachen upon receiving a merit-based scholarship. FH Aachen is ranked #1 University of Applied Sciences in Germany for Computer Science.",
+    ],
     coursework: [
       "Computer Programming",
       "English I & II",

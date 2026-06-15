@@ -1,10 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import { ScrollReveal } from "@/components/effects/ScrollReveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { education, type EducationItem } from "@/data/education";
 
 function EducationCard({ item, delay }: { item: EducationItem; delay: number }) {
+  const [open, setOpen] = useState(false);
+
   return (
     <ScrollReveal delay={delay}>
       <div className="relative grid gap-4 pl-10 sm:grid-cols-[minmax(0,0.32fr)_minmax(0,1fr)] sm:gap-10 sm:pl-12">
@@ -42,19 +45,43 @@ function EducationCard({ item, delay }: { item: EducationItem; delay: number }) 
             </p>
           </div>
 
-          {/* coursework list */}
+          {/* highlights */}
+          <ul className="mt-4 space-y-2">
+            {item.highlights.map((point) => (
+              <li key={point} className="flex items-start gap-2.5 text-sm leading-relaxed text-zinc-300">
+                <span className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-violet-400/70" />
+                {point}
+              </li>
+            ))}
+          </ul>
+
+          {/* coursework toggle */}
           <div className="mt-5 border-t border-white/[0.06] pt-4">
-            <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-zinc-500">
-              Coursework
-            </p>
-            <ul className="space-y-2">
-              {item.coursework.map((course) => (
-                <li key={course} className="flex items-start gap-2.5 text-sm text-zinc-300">
-                  <span className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-violet-400/70" />
-                  {course}
-                </li>
-              ))}
-            </ul>
+            <button
+              onClick={() => setOpen((v) => !v)}
+              className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-zinc-500 transition-colors hover:text-violet-400"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 12 12"
+                fill="none"
+                className={`h-3 w-3 shrink-0 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+              >
+                <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+              {open ? "Hide Coursework" : "See Coursework"}
+            </button>
+
+            {open && (
+              <ul className="mt-3 space-y-2">
+                {item.coursework.map((course) => (
+                  <li key={course} className="flex items-start gap-2.5 text-sm text-zinc-300">
+                    <span className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-violet-400/70" />
+                    {course}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
       </div>
