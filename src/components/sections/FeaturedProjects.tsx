@@ -29,9 +29,16 @@ export function FeaturedProjects() {
                 </div>
 
                 <div className="relative flex items-center justify-between gap-3">
-                  <span className="rounded-full border border-white/10 bg-black/40 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.22em] text-zinc-400">
-                    {project.year}
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <span className="rounded-full border border-white/10 bg-black/40 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.22em] text-zinc-400">
+                      {project.year}
+                    </span>
+                    {project.status ? (
+                      <span className="rounded-full border border-cyan-400/20 bg-cyan-400/[0.06] px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.18em] text-cyan-200/90">
+                        {project.status}
+                      </span>
+                    ) : null}
+                  </div>
                   <div className="flex gap-2">
                     {project.github ? (
                       <a
@@ -67,7 +74,11 @@ export function FeaturedProjects() {
                 </div>
 
                 <div className="relative mt-6 flex-1">
-                  <h3 className="font-display text-xl font-semibold tracking-tight text-white">
+                  <h3 className="flex items-center gap-3 font-display text-xl font-semibold tracking-tight text-white">
+                    {project.logo ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={project.logo} alt="" className="h-7 w-auto" />
+                    ) : null}
                     {project.title}
                   </h3>
                   <p className="mt-2 text-sm text-violet-200/90">{project.tagline}</p>

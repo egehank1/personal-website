@@ -14,6 +14,8 @@ export type Project = {
   github?: string;
   medium?: string;
   live?: string;
+  logo?: string;
+  status?: string;
   year: string;
   caseStudy?: {
     subtitle: string;
@@ -23,6 +25,37 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "koby",
+    title: "Koby",
+    logo: "/projects/koby-mark.svg",
+    status: "Private beta",
+    tagline: "AI-assisted business analysis and prioritisation for small businesses.",
+    description:
+      "A platform for Turkish SMEs (KOBİ) that turns a business profile into an evidence-backed analysis, at most three priorities, a social media preview and a customer-ready report. Built with a small team; currently in a closed beta.",
+    highlights: [
+      "Server-side pipeline run as a state machine: the UI starts a stage and polls, failed stages retry without re-running finished model calls",
+      "Evidence gathered from Google Places, Tavily search/extract and verified Instagram profiles, then hashed so stale reports are flagged when inputs change",
+      "Explicit demo vs. live mode, per-role token caps and daily/minute call limits so API costs stay predictable",
+      "Human review step and versioned specialist modules instead of forcing every case through the model",
+      "Agent workflow on GitHub: an issue form and a label hand a task to a coding agent, which opens a PR that a bot merges once CI is green",
+    ],
+    tech: [
+      "Next.js 16",
+      "TypeScript",
+      "React 19",
+      "Tailwind CSS",
+      "Prisma",
+      "PostgreSQL",
+      "Supabase",
+      "OpenAI",
+      "Zod",
+      "Google Places API",
+      "Tavily",
+      "GitHub Actions",
+    ],
+    year: "2026",
+  },
+  {
     slug: "deepscholar",
     title: "DeepScholar",
     tagline: "RAG-powered research copilot with grounded citations.",
@@ -30,7 +63,8 @@ export const projects: Project[] = [
       "Ingests academic PDFs into a pgvector knowledge base and answers questions using semantically retrieved, source-cited passages. Every answer stays grounded at retrieval time, so the model either cites a real passage or admits it cannot answer instead of fabricating references.",
     highlights: [
       "Sentence-aware chunking with configurable overlap preserves context at boundaries",
-      "pgvector cosine similarity + IVFFlat indexing for sub-100 ms semantic retrieval",
+      "Hybrid retrieval: pgvector cosine search + Postgres full-text, fused with Reciprocal Rank Fusion and reranked with BM25",
+      "Runs fully local with Ollama (no API key), or with OpenAI; Postgres + pgvector via Docker Compose",
       "RAG prompt enforces grounded responses: cite a passage or say you cannot answer",
       "Structured JSON citation output with source, chunk ID, and passage fields",
     ],
@@ -44,9 +78,10 @@ export const projects: Project[] = [
       "FastAPI",
       "Python",
       "OpenAI",
+      "Ollama",
       "PostgreSQL",
       "pgvector",
-      "Supabase",
+      "Docker",
       "PyMuPDF",
     ],
     github: "https://github.com/egehank1/deepscholar",
