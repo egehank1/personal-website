@@ -79,6 +79,7 @@ export default async function ProjectPage({ params }: Props) {
           <div className="flex flex-wrap items-center justify-between gap-4">
             <p className="text-xs font-medium uppercase tracking-[0.26em] text-zinc-500">
               Case study · {project.year}
+              {project.status ? ` · ${project.status}` : ""}
             </p>
             <div className="flex flex-wrap gap-2">
               {project.github ? (
@@ -105,7 +106,11 @@ export default async function ProjectPage({ params }: Props) {
           </div>
 
           {/* Title + tagline */}
-          <h1 className="mt-6 font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+          <h1 className="mt-6 flex items-center gap-4 font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl">
+            {project.logo ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={project.logo} alt="" className="h-10 w-auto sm:h-12" />
+            ) : null}
             {project.title}
           </h1>
           <p className="mt-3 text-base text-violet-200/90 sm:text-lg">
