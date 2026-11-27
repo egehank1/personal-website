@@ -12,13 +12,13 @@ export type ExperienceItem = {
 export const experience: ExperienceItem[] = [
   {
     id: "0",
-    role: "Co-Founder & Software Engineer",
+    role: "Co-Founder",
     company: "Koby",
     logo: "/brand/koby-mark.svg",
     period: "Oct 2026 - Present",
     summary:
-      "Building Koby, an AI startup that helps small and medium-sized businesses grow revenue. The platform automatically analyses a business's website, Google presence and social media, then turns the evidence into at most three concrete priorities, a social media preview and a customer-ready report. Designed the server-side AI pipeline, the evidence and cost controls, and an agent-driven engineering workflow (AI coding agents, automated PRs, CI and auto-merge) that lets a four-person team ship daily without manual git work.",
-    stack: ["AI Agents", "LLMs", "Next.js", "TypeScript", "Prisma", "PostgreSQL", "GitHub Actions", "Startup"],
+      "Co-founded Koby, an AI startup that helps small and medium-sized businesses grow revenue. The platform analyses a business's website, Google presence and social media automatically, then turns the evidence into at most three concrete priorities, a social media preview and a customer-ready report. I build the AI side of the product: LLM integrations, the evidence-backed analysis pipeline and the cost and quality controls around it. We ship daily with an agent-driven workflow in which coding agents open pull requests that CI checks and a bot merges.",
+    stack: ["AI Agents", "LLMs", "OpenAI API", "Next.js", "TypeScript", "Prisma", "PostgreSQL", "GitHub Actions"],
   },
   {
     id: "1",
