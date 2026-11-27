@@ -28,6 +28,10 @@ export function ExperienceTimeline() {
                     <p className="mt-2 font-display text-lg font-semibold text-white sm:text-xl">
                       {item.role}
                     </p>
+                    {item.logo ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={item.logo} alt={`${item.company} logo`} className="mt-3 h-9 w-auto" />
+                    ) : null}
                     {item.companyUrl ? (
                       <a
                         href={item.companyUrl}

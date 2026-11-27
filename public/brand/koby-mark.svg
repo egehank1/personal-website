@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="414" height="442" viewBox="0 0 414 442" role="img" aria-labelledby="koby-title">
+  <title id="koby-title">Koby mark</title>
+  <desc>Reconstructed vector artwork. Editable Bezier paths; no bitmap embeds or font dependencies.</desc>
+  <defs>
+    <linearGradient id="koby-stem" gradientUnits="userSpaceOnUse" x1="247" y1="175" x2="285" y2="553"><stop stop-color="#00b8f8"/><stop offset="1" stop-color="#005cff"/></linearGradient>
+    <linearGradient id="koby-arrow" gradientUnits="userSpaceOnUse" x1="216" y1="535" x2="610" y2="116"><stop stop-color="#0082ff"/><stop offset="1" stop-color="#00e6f3"/></linearGradient>
+    <linearGradient id="koby-leg" gradientUnits="userSpaceOnUse" x1="387" y1="398" x2="553" y2="533"><stop stop-color="#008cff"/><stop offset="1" stop-color="#00dff1"/></linearGradient>
+  </defs>
+  
+  <g transform="translate(-205 -112)">
+      <path id="koby-stem-shape" d="M 232,175 H 293 C 308,175 320,187 320,202 V 528 C 320,543 310,553 295,553 H 232 C 217,553 205,543 205,528 V 203 C 205,187 217,175 232,175 Z" fill="url(#koby-stem)"/>
+      <path id="koby-arrow-shape" d="M 205,488 C 208,451 233,425 261,401 L 485,185 L 462,178 C 454,176 453,170 460,167 L 602,113 C 612,109 621,115 617,127 L 580,257 C 578,265 571,266 567,258 L 551,230 C 450,320 355,417 267,498 C 249,523 239,538 234,553 H 232 C 216,553 205,542 205,528 Z" fill="url(#koby-arrow)"/>
+      <path id="koby-leg-shape" d="M 374,418 L 405,387 C 424,374 441,374 454,389 L 587,539 C 595,548 591,553 581,553 H 483 C 470,553 464,549 456,541 L 374,448 C 364,437 364,428 374,418 Z" fill="url(#koby-leg)"/>
+  </g>
+</svg>

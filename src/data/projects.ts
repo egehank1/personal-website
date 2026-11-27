@@ -27,7 +27,7 @@ export const projects: Project[] = [
   {
     slug: "koby",
     title: "Koby",
-    logo: "/projects/koby-mark.svg",
+    logo: "/brand/koby-mark.svg",
     status: "Private beta",
     tagline: "AI-assisted business analysis and prioritisation for small businesses.",
     description:
@@ -58,6 +58,7 @@ export const projects: Project[] = [
   {
     slug: "deepscholar",
     title: "DeepScholar",
+    logo: "/projects/deepscholar-mark.svg",
     tagline: "RAG-powered research copilot with grounded citations.",
     description:
       "Ingests academic PDFs into a pgvector knowledge base and answers questions using semantically retrieved, source-cited passages. Every answer stays grounded at retrieval time, so the model either cites a real passage or admits it cannot answer instead of fabricating references.",

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1138" height="477" viewBox="0 0 1138 477" role="img" aria-labelledby="koby-title">
+  <title id="koby-title">Koby wordmark</title>
+  <desc>Reconstructed vector artwork. Editable Bezier paths; no bitmap embeds or font dependencies.</desc>
+  <defs>
+    <linearGradient id="koby-stem" gradientUnits="userSpaceOnUse" x1="247" y1="175" x2="285" y2="553"><stop stop-color="#00b8f8"/><stop offset="1" stop-color="#005cff"/></linearGradient>
+    <linearGradient id="koby-arrow" gradientUnits="userSpaceOnUse" x1="216" y1="535" x2="610" y2="116"><stop stop-color="#0082ff"/><stop offset="1" stop-color="#00e6f3"/></linearGradient>
+    <linearGradient id="koby-leg" gradientUnits="userSpaceOnUse" x1="387" y1="398" x2="553" y2="533"><stop stop-color="#008cff"/><stop offset="1" stop-color="#00dff1"/></linearGradient>
+  </defs>
+  
+  <g transform="translate(-205 -112)">
+      <path id="koby-stem-shape" d="M 232,175 H 293 C 308,175 320,187 320,202 V 528 C 320,543 310,553 295,553 H 232 C 217,553 205,543 205,528 V 203 C 205,187 217,175 232,175 Z" fill="url(#koby-stem)"/>
+      <path id="koby-arrow-shape" d="M 205,488 C 208,451 233,425 261,401 L 485,185 L 462,178 C 454,176 453,170 460,167 L 602,113 C 612,109 621,115 617,127 L 580,257 C 578,265 571,266 567,258 L 551,230 C 450,320 355,417 267,498 C 249,523 239,538 234,553 H 232 C 216,553 205,542 205,528 Z" fill="url(#koby-arrow)"/>
+      <path id="koby-leg-shape" d="M 374,418 L 405,387 C 424,374 441,374 454,389 L 587,539 C 595,548 591,553 581,553 H 483 C 470,553 464,549 456,541 L 374,448 C 364,437 364,428 374,418 Z" fill="url(#koby-leg)"/>
+      <path id="koby-letter-o" d="M 683,273 C 757,273 813,323 813,394 C 813,464 760,516 683,516 C 607,516 551,466 551,395 C 551,325 605,273 683,273 Z M 683,337 C 648,337 622,361 622,395 C 622,429 648,454 683,454 C 717,454 742,430 742,395 C 742,361 717,337 683,337 Z" fill="#f4f7fb" fill-rule="evenodd"/>
+      <path id="koby-letter-b" d="M 831,201 H 900 V 310 C 923,286 949,273 980,273 C 1046,273 1095,325 1095,395 C 1095,465 1046,517 980,517 C 948,517 921,506 900,486 V 513 H 831 Z M 960,337 C 925,337 900,361 900,395 C 900,430 925,455 960,455 C 995,455 1020,431 1020,395 C 1020,359 995,337 960,337 Z" fill="#f4f7fb" fill-rule="evenodd"/>
+      <path id="koby-letter-y" d="M 1080,278 H 1157 L 1211,420 L 1266,278 H 1343 L 1201,589 H 1121 L 1168,491 Z" fill="#f4f7fb" fill-rule="evenodd"/>
+  </g>
+</svg>

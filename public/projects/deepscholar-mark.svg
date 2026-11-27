@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="ds-title">
+  <title id="ds-title">DeepScholar mark</title>
+  <defs>
+    <linearGradient id="ds-left" gradientUnits="userSpaceOnUse" x1="70" y1="160" x2="250" y2="400"><stop stop-color="#a78bfa"/><stop offset="1" stop-color="#6d4aff"/></linearGradient>
+    <linearGradient id="ds-right" gradientUnits="userSpaceOnUse" x1="270" y1="160" x2="440" y2="400"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#3b6cff"/></linearGradient>
+    <linearGradient id="ds-node" gradientUnits="userSpaceOnUse" x1="170" y1="60" x2="345" y2="140"><stop stop-color="#c4b5fd"/><stop offset="1" stop-color="#7dd3fc"/></linearGradient>
+  </defs>
+  <g transform="translate(0 24)"><path d="M 248,404 C 196,374 130,370 74,388 V 172 C 130,152 196,156 248,186 Z" fill="url(#ds-left)"/>
+  <path d="M 264,404 C 316,374 382,370 438,388 V 172 C 382,152 316,156 264,186 Z" fill="url(#ds-right)"/>
+  <g stroke="url(#ds-node)" stroke-width="10" stroke-linecap="round" fill="none">
+    <path d="M 256,92 L 178,126"/>
+    <path d="M 256,92 L 334,126"/>
+    <path d="M 256,92 V 178" stroke-dasharray="2 18"/>
+  </g>
+  <circle cx="256" cy="86" r="26" fill="url(#ds-node)"/>
+  <circle cx="176" cy="126" r="15" fill="url(#ds-node)"/>
+  <circle cx="336" cy="126" r="15" fill="url(#ds-node)"/>
+  <circle cx="256" cy="86" r="9" fill="#0b0b14"/></g>
+</svg>
