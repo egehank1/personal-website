@@ -61,8 +61,8 @@ export const experience: ExperienceItem[] = [
     id: "4",
     role: "Computer Science Tutor",
     company: "FH Aachen University of Applied Sciences",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/5/5b/FHAachen-logo2010.svg",
-    logoClass: "h-12 brightness-0 invert",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/b/b9/FHAachen-logo.svg",
+    logoClass: "h-10",
     period: "Aug 2024 - Feb 2025",
     summary:
       "Tutored 200+ students in Fundamentals of Computer Science and Advanced Programming Languages across 6 months, covering C++, algorithms, data structures, and memory management. Ran coding labs and guided students through assignments, with a focus on making hard topics click through worked examples.",
