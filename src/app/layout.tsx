@@ -32,8 +32,12 @@ export const metadata: Metadata = {
   description: site.description,
   applicationName: site.name,
   authors: [{ name: site.name, url: site.url }],
+  other: { "github-profile": site.social.github },
   creator: site.name,
   keywords: [
+    "Egehan Kilic",
+    "egehankilic",
+    "Koby",
     "AI engineer",
     "machine learning",
     "Next.js",
@@ -74,11 +78,33 @@ export const viewport: Viewport = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: site.name,
-  url: site.url,
-  jobTitle: site.title,
-  sameAs: [site.social.github, site.social.linkedin, site.social.medium],
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${site.url.replace(/\/$/, "")}/#person`,
+      name: site.name,
+      givenName: "Egehan",
+      familyName: "Kilic",
+      alternateName: ["Egehan Kılıç", "egehankilic"],
+      url: site.url,
+      image: `${site.url.replace(/\/$/, "")}/opengraph-image`,
+      jobTitle: site.title,
+      description:
+        "Co-founder of Koby, an AI startup, and software developer at snacc-it.",
+      worksFor: [
+        { "@type": "Organization", name: "Koby" },
+        { "@type": "Organization", name: "snacc-it" },
+      ],
+      sameAs: [site.social.github, site.social.linkedin, site.social.medium],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${site.url.replace(/\/$/, "")}/#website`,
+      url: site.url,
+      name: site.name,
+      publisher: { "@id": `${site.url.replace(/\/$/, "")}/#person` },
+    },
+  ],
 };
 
 export default function RootLayout({
@@ -88,6 +114,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="me" href={site.social.github} />
+        <link rel="me" href={site.social.linkedin} />
+        <link rel="me" href={site.social.medium} />
+      </head>
       <body
         className={`${inter.variable} ${space.variable} min-h-screen bg-[#030306] bg-background text-foreground antialiased`}
       >
