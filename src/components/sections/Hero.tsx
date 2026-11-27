@@ -29,30 +29,11 @@ export function Hero() {
       <GradientMesh />
       <NeuralNetworkBackground />
       <div className="relative z-10 mx-auto max-w-6xl px-4 sm:px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-8"
-        >
-          <Link
-            href="/#experience"
-            className="group inline-flex items-center gap-3 rounded-full border border-white/12 bg-white/[0.04] py-1.5 pl-2 pr-4 text-xs text-zinc-200 backdrop-blur-xl transition hover:border-cyan-400/40 hover:bg-white/[0.07] sm:text-sm"
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/brand/koby-mark.svg" alt="Koby logo" className="h-6 w-auto" />
-            <span>
-              Building <span className="font-semibold text-white">Koby</span>, an AI startup for small businesses
-            </span>
-            <span aria-hidden className="transition group-hover:translate-x-0.5">→</span>
-          </Link>
-        </motion.div>
-
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-6 max-w-4xl pb-1 font-display text-[clamp(2.6rem,6vw,4.25rem)] font-semibold leading-[1.1] tracking-tight text-white"
+          className="mt-8 max-w-4xl pb-1 font-display text-[clamp(2.6rem,6vw,4.25rem)] font-semibold leading-[1.1] tracking-tight text-white"
         >
           From rough ideas
           <span className="block bg-gradient-to-r from-white via-violet-100 to-blue-200 bg-clip-text pb-3 text-transparent">

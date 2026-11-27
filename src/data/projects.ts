@@ -85,7 +85,7 @@ export const projects: Project[] = [
       "Docker",
       "PyMuPDF",
     ],
-    github: "https://github.com/egehank1/deepscholar",
+    github: "https://github.com/egehankilic/deepscholar",
     medium:
       "https://medium.com/@egehankilic/the-hardest-part-of-ai-research-tools-isnt-generation-it-s-trust-14cf5f11e37e",
     year: "2026",
@@ -183,7 +183,7 @@ export const projects: Project[] = [
       "K-Means Clustering",
       "RFM Analysis",
     ],
-    github: "https://github.com/egehank1/rfm-customer-segmentation",
+    github: "https://github.com/egehankilic/rfm-customer-segmentation",
     year: "2025",
     caseStudy: {
       subtitle:
@@ -282,7 +282,7 @@ export const projects: Project[] = [
       "Responsive Web Design",
       "Git",
     ],
-    github: "https://github.com/egehank1/jpl-mars-rover",
+    github: "https://github.com/egehankilic/jpl-mars-rover",
     year: "2024",
     caseStudy: {
       subtitle:
@@ -381,7 +381,7 @@ export const projects: Project[] = [
       "OOP Design Patterns",
       "JSON Persistence",
     ],
-    github: "https://github.com/egehank1/Bank_Application",
+    github: "https://github.com/egehankilic/Bank_Application",
     year: "2024",
     caseStudy: {
       subtitle:

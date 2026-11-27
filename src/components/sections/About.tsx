@@ -29,11 +29,26 @@ export function About() {
 
         <div className="grid gap-6 lg:grid-cols-[1.1fr_minmax(0,0.9fr)] lg:gap-10">
           <ScrollReveal className="rounded-3xl border border-white/[0.08] bg-gradient-to-br from-white/[0.06] via-white/[0.02] to-transparent p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_40px_120px_-60px_rgba(99,102,241,0.55)] backdrop-blur-xl sm:p-8">
+            <div className="mb-5 inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-black/30 py-2 pl-2 pr-4">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white p-1.5">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/brand/koby-mark.svg" alt="Koby logo" className="h-full w-full object-contain" />
+              </span>
+              <span className="text-xs font-medium uppercase tracking-[0.18em] text-zinc-300">
+                Co-founder, Koby
+              </span>
+            </div>
             <p className="text-sm leading-relaxed text-zinc-300 sm:text-[15px]">
-              Right now I&apos;m a Software Developer at snacc-it GmbH, contributing to
+              I&apos;m co-founding Koby, an AI startup that helps small and medium-sized
+              businesses grow. It analyses a business&apos;s website, Google presence and social
+              media, then turns the evidence into a few concrete priorities and a
+              customer-ready report. I build the AI side of the product.
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-zinc-300 sm:text-[15px]">
+              Alongside that I&apos;m a Software Developer at snacc-it GmbH, contributing to
               Project ETHICA, a €6.2M EU-funded R&D initiative building a Digital Product
               Passport platform that uses LLMs and RAG to automate ESG compliance verification
-              across global supply chains. Alongside that I work across ServiceNow: incident
+              across global supply chains. I also work across ServiceNow: incident
               management, travel reimbursement, illness reporting, and enterprise web development.
               On the side I build AI projects like DeepScholar, a RAG research copilot that
               keeps its answers grounded in real, citable sources.

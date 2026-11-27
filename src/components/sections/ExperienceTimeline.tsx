@@ -25,13 +25,29 @@ export function ExperienceTimeline() {
                     <p className="text-xs font-medium uppercase tracking-[0.22em] text-zinc-500">
                       {item.period}
                     </p>
-                    <p className="mt-2 font-display text-lg font-semibold text-white sm:text-xl">
-                      {item.role}
-                    </p>
-                    {item.logo ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={item.logo} alt={`${item.company} logo`} className="mt-3 h-9 w-auto" />
-                    ) : null}
+                    <div className="mt-3 flex items-center gap-3">
+                      {item.logo ? (
+                        <span className="flex h-12 min-w-12 shrink-0 items-center justify-center rounded-xl bg-white px-2.5 shadow-[0_0_0_1px_rgba(255,255,255,0.12),0_10px_30px_-12px_rgba(99,102,241,0.5)]">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={item.logo}
+                            alt={`${item.company} logo`}
+                            loading="lazy"
+                            className="max-h-8 w-auto max-w-[96px] object-contain"
+                          />
+                        </span>
+                      ) : item.monogram ? (
+                        <span
+                          aria-hidden
+                          className="flex h-12 min-w-12 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-gradient-to-br from-violet-500/25 via-blue-500/10 to-transparent px-2.5 text-xs font-semibold tracking-[0.14em] text-zinc-200"
+                        >
+                          {item.monogram}
+                        </span>
+                      ) : null}
+                      <div>
+                        <p className="font-display text-lg font-semibold leading-tight text-white sm:text-xl">
+                          {item.role}
+                        </p>
                     {item.companyUrl ? (
                       <a
                         href={item.companyUrl}
@@ -44,6 +60,8 @@ export function ExperienceTimeline() {
                     ) : (
                       <p className="text-sm text-violet-200/90">{item.company}</p>
                     )}
+                      </div>
+                    </div>
                   </div>
                   <div className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-5 backdrop-blur-xl sm:p-6">
                     <p className="text-sm leading-relaxed text-zinc-300">

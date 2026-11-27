@@ -21,7 +21,7 @@ export const site = {
   url: resolveSiteUrl(),
   email: "egehanantalya@gmail.com",
   social: {
-    github: "https://github.com/egehank1",
+    github: "https://github.com/egehankilic",
     linkedin: "https://www.linkedin.com/in/egehankilic/",
     medium: "https://medium.com/@egehankilic",
   },
