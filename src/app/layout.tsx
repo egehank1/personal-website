@@ -92,7 +92,7 @@ const jsonLd = {
       description:
         "Co-founder of Koby, an AI startup, and software developer at snacc-it.",
       worksFor: [
-        { "@type": "Organization", name: "Koby" },
+        { "@type": "Organization", name: "Koby", url: "https://www.linkedin.com/company/getkoby/" },
         { "@type": "Organization", name: "snacc-it" },
       ],
       sameAs: [site.social.github, site.social.linkedin, site.social.medium],

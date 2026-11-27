@@ -16,11 +16,12 @@ export const experience: ExperienceItem[] = [
     id: "0",
     role: "Co-Founder",
     company: "Koby",
+    companyUrl: "https://www.linkedin.com/company/getkoby/",
     logo: "/brand/koby-wordmark.svg",
     logoClass: "h-8",
     period: "Oct 2026 - Present",
     summary:
-      "Co-founded Koby, an AI startup that helps small and medium-sized businesses grow revenue. The platform analyses a business's website, Google presence and social media automatically, then turns the evidence into at most three concrete priorities, a social media preview and a customer-ready report. I build the AI side of the product: LLM integrations, the evidence-backed analysis pipeline and the cost and quality controls around it. We ship daily with an agent-driven workflow in which coding agents open pull requests that CI checks and a bot merges.",
+      "Co-founded Koby, an AI startup that finds hidden growth gaps in small and mid-sized businesses and helps close them with automation. The platform analyses a business's website, Google presence and social media automatically, then turns the evidence into at most three concrete priorities, a social media preview and a customer-ready report. I build the AI side of the product: LLM integrations, the evidence-backed analysis pipeline and the cost and quality controls around it. We ship daily with an agent-driven workflow in which coding agents open pull requests that CI checks and a bot merges.",
     stack: ["AI Agents", "LLMs", "OpenAI API", "Next.js", "TypeScript", "Prisma", "PostgreSQL", "GitHub Actions"],
   },
   {
