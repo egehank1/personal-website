@@ -55,7 +55,7 @@ export function ExperienceTimeline() {
                         </p>
                       </div>
                     )}
-                    {!item.logo || item.companyUrl ? (
+                    {!item.logo ? (
                       item.companyUrl ? (
                         <a
                           href={item.companyUrl}
@@ -75,6 +75,16 @@ export function ExperienceTimeline() {
                       {item.summary}
                     </p>
                     <div className="mt-4 flex flex-wrap gap-2">
+                      {item.companyUrl ? (
+                        <a
+                          href={item.companyUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="rounded-full border border-violet-400/30 bg-violet-500/10 px-2.5 py-1 text-[11px] font-medium text-violet-200 transition hover:border-violet-300/60 hover:text-white"
+                        >
+                          {item.companyUrl.replace(/^https?:\/\/(www\.)?/, "")} ↗
+                        </a>
+                      ) : null}
                       {item.stack.map((s) => (
                         <span
                           key={s}

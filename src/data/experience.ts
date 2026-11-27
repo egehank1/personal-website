@@ -61,7 +61,7 @@ export const experience: ExperienceItem[] = [
     id: "4",
     role: "Computer Science Tutor",
     company: "FH Aachen University of Applied Sciences",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/b/b9/FHAachen-logo.svg",
+    logo: "/logos/fh-aachen.png",
     logoClass: "h-10",
     period: "Aug 2024 - Feb 2025",
     summary:
