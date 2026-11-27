@@ -4,6 +4,7 @@ export type ExperienceItem = {
   company: string;
   companyUrl?: string;
   logo?: string;
+  logoClass?: string;
   monogram?: string;
   period: string;
   summary: string;
@@ -15,7 +16,8 @@ export const experience: ExperienceItem[] = [
     id: "0",
     role: "Co-Founder",
     company: "Koby",
-    logo: "/brand/koby-mark.svg",
+    logo: "/brand/koby-wordmark.svg",
+    logoClass: "h-8",
     period: "Oct 2026 - Present",
     summary:
       "Co-founded Koby, an AI startup that helps small and medium-sized businesses grow revenue. The platform analyses a business's website, Google presence and social media automatically, then turns the evidence into at most three concrete priorities, a social media preview and a customer-ready report. I build the AI side of the product: LLM integrations, the evidence-backed analysis pipeline and the cost and quality controls around it. We ship daily with an agent-driven workflow in which coding agents open pull requests that CI checks and a bot merges.",
@@ -25,7 +27,8 @@ export const experience: ExperienceItem[] = [
     id: "1",
     role: "Software Developer",
     company: "snacc-it",
-    logo: "/logos/snacc-it.svg",
+    logo: "/logos/snacc-it-dark.svg",
+    logoClass: "h-7",
     period: "Mar 2025 - Present",
     summary:
       "Contributing to Project ETHICA, a €6.2M EU-funded R&D initiative building a Digital Product Passport platform that uses LLMs and RAG to automate ESG compliance verification across global supply chains. Built and deployed end-to-end ServiceNow applications automating incident management, travel reimbursement, and illness reporting workflows. Also maintained and optimized the company enterprise website across production environments.",
@@ -35,7 +38,8 @@ export const experience: ExperienceItem[] = [
     id: "2",
     role: "Founder",
     company: "Hardstyle Wear",
-    logo: "https://www.hardstylewear.com/wp-content/uploads/2022/12/cropped-Yeni-Proje-3-1-1-1-192x192.png",
+    logo: "https://www.hardstylewear.com/wp-content/uploads/2022/12/Yeni-Proje-3-1.png",
+    logoClass: "h-12 brightness-0 invert",
     companyUrl: "https://www.hardstylewear.com",
     period: "Feb 2023 - Jun 2024",
     summary:
@@ -46,7 +50,8 @@ export const experience: ExperienceItem[] = [
     id: "3",
     role: "Quantitative Developer",
     company: "Aachen Investment Club e.V.",
-    monogram: "AIC",
+    logo: "https://avatars.githubusercontent.com/u/191549492?v=4&s=128",
+    logoClass: "h-10 rounded-md invert",
     period: "Mar 2025 - Aug 2025",
     summary:
       "Engineered Python-based algorithmic trading systems with live price streaming, multi-threading, and automated order execution. Developed and validated quantitative strategies against 6+ years of historical market data using custom backtesting frameworks. Built data aggregation tools with Pandas, web scraping, and third-party APIs to feed signal generation.",
@@ -56,7 +61,8 @@ export const experience: ExperienceItem[] = [
     id: "4",
     role: "Computer Science Tutor",
     company: "FH Aachen University of Applied Sciences",
-    monogram: "FH",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/5/5b/FHAachen-logo2010.svg",
+    logoClass: "h-12 brightness-0 invert",
     period: "Aug 2024 - Feb 2025",
     summary:
       "Tutored 200+ students in Fundamentals of Computer Science and Advanced Programming Languages across 6 months, covering C++, algorithms, data structures, and memory management. Ran coding labs and guided students through assignments, with a focus on making hard topics click through worked examples.",
@@ -76,7 +82,8 @@ export const experience: ExperienceItem[] = [
     id: "6",
     role: "Graphic Designer",
     company: "Fiverr (Freelance)",
-    monogram: "Fi",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/1/18/Fiverr_Logo_09.2020.svg",
+    logoClass: "h-7 brightness-0 invert",
     period: "Apr 2020 - Jun 2023",
     summary:
       "Maintained a 4.9-star rating across 85+ completed orders over 3 years on the platform. Designed logos and brand identities for 45+ personal brands and small businesses. Delivered 120+ social media graphics including headers, posts, and promotional banners.",

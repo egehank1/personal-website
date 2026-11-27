@@ -37,9 +37,20 @@ function EducationCard({ item, delay }: { item: EducationItem; delay: number }) 
         <div className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-5 backdrop-blur-xl sm:p-6">
           {/* institution header */}
           <div className="flex items-center gap-3">
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-gradient-to-br from-violet-500/20 via-blue-500/10 to-transparent font-display text-[10px] font-semibold tracking-wider text-violet-200">
-              {item.abbreviation}
-            </span>
+            {item.logo ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={item.logo}
+                alt={`${item.institution} logo`}
+                loading="lazy"
+                referrerPolicy="no-referrer"
+                className={`w-auto shrink-0 object-contain ${item.logoClass ?? "h-10"}`}
+              />
+            ) : (
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-gradient-to-br from-violet-500/20 via-blue-500/10 to-transparent font-display text-[10px] font-semibold tracking-wider text-violet-200">
+                {item.abbreviation}
+              </span>
+            )}
             <p className="font-display text-sm font-semibold leading-snug text-white sm:text-base">
               {item.institution}
             </p>

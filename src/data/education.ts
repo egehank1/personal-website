@@ -2,6 +2,8 @@ export type EducationItem = {
   id: string;
   institution: string;
   abbreviation: string;
+  logo?: string;
+  logoClass?: string;
   degree: string;
   field: string;
   period: string;
@@ -17,13 +19,15 @@ export const education: EducationItem[] = [
     id: "fh-aachen",
     institution: "FH Aachen University of Applied Sciences",
     abbreviation: "FH",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/5/5b/FHAachen-logo2010.svg",
+    logoClass: "h-10 brightness-0 invert",
     degree: "Bachelor's degree",
     field: "Computer Science",
     period: "Aug 2023 – Aug 2026",
-    gpa: "1.4",
+    gpa: "1.3",
     gpaNote: "German Scale",
     highlights: [
-      "Maintaining a GPA of 1.4 (German scale: 1.0 = highest), reflecting strong and consistent academic performance.",
+      "Maintaining a GPA of 1.3 (German scale: 1.0 = highest), reflecting strong and consistent academic performance.",
       "Selected as an e-fellows.net scholar, a merit-based scholarship awarded to high-achieving students in STEM, renewed April 2026.",
       "Tutored peers in Fundamentals of CS and Advanced Programming Languages (C++) across 2 semesters, reinforcing both technical and communication skills.",
     ],

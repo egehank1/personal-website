@@ -29,13 +29,11 @@ export function About() {
 
         <div className="grid gap-6 lg:grid-cols-[1.1fr_minmax(0,0.9fr)] lg:gap-10">
           <ScrollReveal className="rounded-3xl border border-white/[0.08] bg-gradient-to-br from-white/[0.06] via-white/[0.02] to-transparent p-6 shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_40px_120px_-60px_rgba(99,102,241,0.55)] backdrop-blur-xl sm:p-8">
-            <div className="mb-5 inline-flex items-center gap-3 rounded-2xl border border-white/10 bg-black/30 py-2 pl-2 pr-4">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white p-1.5">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/brand/koby-mark.svg" alt="Koby logo" className="h-full w-full object-contain" />
-              </span>
-              <span className="text-xs font-medium uppercase tracking-[0.18em] text-zinc-300">
-                Co-founder, Koby
+            <div className="mb-5 flex items-center gap-3">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/brand/koby-wordmark.svg" alt="Koby logo" className="h-8 w-auto" />
+              <span className="font-display text-base font-semibold text-white">
+                <span className="text-zinc-500">· </span>Co-founder
               </span>
             </div>
             <p className="text-sm leading-relaxed text-zinc-300 sm:text-[15px]">
